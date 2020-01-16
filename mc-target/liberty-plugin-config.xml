@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<liberty-plugin-config>
+    <activeBuildProfiles>
+        <profileId>microclimate</profileId>
+    </activeBuildProfiles>
+    <installDirectory>/opt/ibm/wlp</installDirectory>
+    <serverDirectory>/home/default/app/mc-target/liberty/wlp/usr/servers/defaultServer</serverDirectory>
+    <userDirectory>/home/default/app/mc-target/liberty/wlp/usr</userDirectory>
+    <serverOutputDirectory>/home/default/app/mc-target/liberty/wlp/usr/servers/defaultServer</serverOutputDirectory>
+    <serverName>defaultServer</serverName>
+    <configFile>/home/default/app/src/main/liberty/config/server.xml</configFile>
+    <bootstrapProperties>
+        <app.location>Weather-1.0-SNAPSHOT.war</app.location>
+        <default.http.port>9080</default.http.port>
+        <default.https.port>9443</default.https.port>
+    </bootstrapProperties>
+    <jvmOptionsFile>/home/default/app/src/main/liberty/config/jvm.options</jvmOptionsFile>
+    <appsDirectory>apps</appsDirectory>
+    <looseApplication>true</looseApplication>
+    <stripVersion>false</stripVersion>
+    <installAppPackages>project</installAppPackages>
+    <applicationFilename>Weather-1.0-SNAPSHOT.war.xml</applicationFilename>
+    <assemblyArtifact>
+        <groupId>com.ibm.websphere.appserver.runtime</groupId>
+        <artifactId>wlp-webProfile7</artifactId>
+        <version>[18.0.0.1,)</version>
+        <type>zip</type>
+    </assemblyArtifact>
+    <assemblyInstallDirectory>/home/default/app/mc-target/liberty</assemblyInstallDirectory>
+    <refresh>false</refresh>
+    <installAppsConfigDropins>/home/default/app/mc-target/liberty/wlp/usr/servers/defaultServer/configDropins/defaults/install_apps_configuration_1491924271.xml</installAppsConfigDropins>
+    <projectType>war</projectType>
+    <projectCompileDependency>com.googlecode.json-simple:json-simple:1.1.1</projectCompileDependency>
+    <warSourceDirectory>/home/default/app/src/main/webapp</warSourceDirectory>
+</liberty-plugin-config>

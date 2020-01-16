@@ -1,0 +1,4 @@
+application/HealthEndpoint.class
+application/rest/JaxrsApplication.class
+application/rest/RootEndpoint.class
+application/rest/v1/WeatherDetails.class
