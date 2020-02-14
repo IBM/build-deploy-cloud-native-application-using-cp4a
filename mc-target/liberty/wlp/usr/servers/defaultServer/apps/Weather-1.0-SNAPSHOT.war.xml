@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<archive>
-    <dir sourceOnDisk="/home/default/app/src/main/webapp" targetInArchive="/"/>
-    <dir sourceOnDisk="/home/default/app/mc-target/classes" targetInArchive="/WEB-INF/classes"/>
-    <file sourceOnDisk="/home/default/.m2/repository/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar" targetInArchive="/WEB-INF/lib/json-simple-1.1.1.jar"/>
-    <file sourceOnDisk="/home/default/app/mc-target/liberty-maven/resources/META-INF/MANIFEST.MF" targetInArchive="/META-INF/MANIFEST.MF"/>
-</archive>
