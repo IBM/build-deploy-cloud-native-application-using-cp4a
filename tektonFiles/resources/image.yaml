@@ -1,0 +1,9 @@
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: image
+spec:
+  type: image
+  params:
+    - name: url
+      value: docker-registry-default.xxxx.us-south.containers.appdomain.cloud/tektonpipeline/nodejsapp
