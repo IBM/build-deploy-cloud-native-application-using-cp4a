@@ -16,7 +16,7 @@ To run the application in Docker use the Docker file called `Dockerfile`.
 The application will run on localhost port [`3000`](http://localhost:3000)
 
 The application exposes the following endpoints:
-* Health endpoint: `<host>:<port>/health`
+* Health endpoint: `<host>:<port>/health`.
 
 ### Screenshots
 
