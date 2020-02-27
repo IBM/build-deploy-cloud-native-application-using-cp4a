@@ -43,7 +43,7 @@ app.get('/getWeather', (req, res) => {
     }
 
     var options = {
-        url: url
+        uri: url
     };
 
     request.post(options, function(error, response, body) {
