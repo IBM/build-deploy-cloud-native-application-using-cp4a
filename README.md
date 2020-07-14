@@ -5,7 +5,7 @@ This code pattern will showcase a complete lifecycle (Develop, Deploy and Manage
 
 ## Steps
 
-1. [Get the API key from Open Weather]()
+1. [Get the API key from Open Weather](#1-get-the-api-key-from-open-weather)
 2. [Add the API key in the Application]()
 3. [Run the Application]()
 
@@ -17,13 +17,15 @@ This code pattern will showcase a complete lifecycle (Develop, Deploy and Manage
 
 ![apikey](doc/source/images/clickonapikeys.png)
 
-- Create an `API Key`, 1. Enter a name and click on `generate`. 2. You will see your API Key as shown. Copy it as it will be required in the next step.
+- Create an `API Key`, 
+  - 1. Enter a name and click on `generate`. 
+  - 2. You will see your API Key as shown. Copy it as it will be required in the next step.
 
 ![apikey2](doc/source/images/createapikey.png)
 
 ### 2. Add the API key in the Application
 
-- In the [server.js](https://github.com/IBM/build-deploy-manage-cloud-native-application-on-openshift/blob/master/server/server.js), on line number 22, paste the `api key` created in [step 1]()
+- In the [server.js](https://github.com/IBM/build-deploy-manage-cloud-native-application-on-openshift/blob/master/server/server.js), on line number 22, paste the `api key` created in [step 1](#1-get-the-api-key-from-open-weather)
 
 ### 3. Run the Application
 
