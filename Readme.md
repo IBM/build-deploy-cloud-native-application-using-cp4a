@@ -103,7 +103,7 @@ You can create a project in codewind either by pointing to an existing Codewind 
 
 ##### 4. Get API Key from Open Weather
 
-Since the application we are using accesses weather information from [Open Weather](https://home.openweathermap.org), we will have to get 
+Since the application we are using accesses weather information from [Open Weather](https://home.openweathermap.org), we will have to get API Key from Open Weather.
 
 - Register at [Open Weather](https://home.openweathermap.org/users/sign_up), if not already registered.
 
@@ -120,7 +120,7 @@ Since the application we are using accesses weather information from [Open Weath
 - Go to eclipse IDE and navigate to `WeatherResources.java` file. Double click on the file to open it.
 <img src="./images/image-20200730152140899.png" alt="image-20200730152140899" width="50%" />
 
-- Around line no. 35, paste the API key that you copied within the double quotes for the variable `apikey`. Save the file.
+- Around line no. 35, paste the API key that you copied within the double quotes for the variable `apikey`. Save the file. The changes get deployed.
 
 ##### 5. Run the application
 
@@ -151,7 +151,7 @@ Once you have added your code into the application and have tested the same, now
 
 ###### If you have cloned repo
 
-If you have already cloned the repo and using it for this code pattern, then you just need to checkin updated files back to git repository. You may use the below commands from the parent folder of the cloned repository.
+If you have already cloned the repo and using it for this code pattern, then you just need to check-in updated files back to git repository. You may use the below commands from the parent folder of the cloned repository.
 
 ```
 $ git add -u
@@ -180,7 +180,8 @@ In case you have created a new project in Codewind, you may use below instructio
   $ git push -u origin master
   ```
 
-  
+
+Application code is now pushed to GitHub repository. We will next see how to configure Tekton pipelines in CP4A to achieve CI/CD for the above application.
 
 
 
@@ -188,27 +189,15 @@ In case you have created a new project in Codewind, you may use below instructio
 
 
 
+## Backup images - To be deleted if unused
 
 
 
-
-1. 
-
-2. a
-
-   ![image-20200728174650612](./images/image-20200728174650612.png)
-
-3. b
-
-   ![image-20200728174736345](./images/image-20200728174736345.png)
-
-4. 
+![image-20200728174650612](./images/image-20200728174650612.png)
 
 
 
-## Appendix of images
-
-
+![image-20200728174736345](./images/image-20200728174736345.png)
 
 
 
