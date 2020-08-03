@@ -1,2 +1,37 @@
+<<<<<<< HEAD
+/target/*
+!.keep
+.DS_Store
+
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+/build/
+
+### VS Code ###
+.vscode/
+/target/
+/bin/
+=======
 node_modules
 .DS_Store
+>>>>>>> ae1b6a360e9b54516ec2c93d9f0f09e93a770b20
