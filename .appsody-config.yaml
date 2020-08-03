@@ -1,0 +1,3 @@
+id: "20200728132333.36330600"
+project-name: cw-microprofile-weather
+stack: docker.io/kabanero/java-microprofile:0.2

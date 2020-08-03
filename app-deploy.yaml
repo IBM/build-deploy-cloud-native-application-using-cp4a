@@ -1,0 +1,82 @@
+apiVersion: appsody.dev/v1beta1
+kind: AppsodyApplication
+metadata:
+  annotations:
+    architecture: x86_64
+    authoritative-source-url: registry.access.redhat.com
+    build-date: 2019-10-29T16:44:53.794580
+    commit.stack.appsody.dev/contextDir: /incubator/java-microprofile
+    commit.stack.appsody.dev/date: Thu May 14 09:37:35 2020 +0100
+    commit.stack.appsody.dev/message: 'Merge pull request #340 from groeges/release-0.9-codewind'
+    description: This image is the Kabanero development container for the java-microprofile
+      stack
+    distribution-scope: public
+    image.opencontainers.org/created: "2020-07-23T18:57:07+05:30"
+    k8s.io/description: The Universal Base Image is designed and engineered to be
+      the base layer for all of your containerized applications, middleware and utilities.
+      This base image is freely redistributable, but Red Hat only supports Red Hat
+      technologies through subscriptions for Red Hat products. This image is maintained
+      by Red Hat and updated regularly.
+    k8s.io/display-name: Red Hat Universal Base Image 8
+    maintainer: Red Hat, Inc.
+    name: kabanero/java-microprofile
+    openshift.io/expose-services: ""
+    openshift.io/tags: base rhel8
+    redhat.com/build-host: cpt-1002.osbs.prod.upshift.rdu2.redhat.com
+    redhat.com/component: ubi8-container
+    redhat.com/license_terms: https://www.redhat.com/en/about/red-hat-end-user-license-agreements#UBI
+    release: "277"
+    stack.appsody.dev/authors: Mike Andrasak <uberskigeek>, Andy Mauer <ajm01>, Scott
+      Kurz <scottkurz>, Adam Wisniewski <awisniew90>
+    stack.appsody.dev/configured: docker.io/kabanero/java-microprofile:0.2
+    stack.appsody.dev/created: "2020-05-19T06:35:39Z"
+    stack.appsody.dev/deprecated: 04/20/2020 - This stack has been replaced by the
+      Open Liberty stack (java-openliberty)
+    stack.appsody.dev/description: Eclipse MicroProfile on Open Liberty & OpenJ9 using
+      Maven
+    stack.appsody.dev/documentation: https://github.com/kabanero-io/collections/tree/master/incubator/java-microprofile/README.md
+    stack.appsody.dev/licenses: Apache-2.0
+    stack.appsody.dev/revision: 104bb146d0d770e30886b845d7fca9311d54ed20
+    stack.appsody.dev/source: https://github.com/kabanero-io/collections/tree/master/incubator/java-microprofile/image
+    stack.appsody.dev/tag: docker.io/kabanero/java-microprofile:0.2.27
+    stack.appsody.dev/title: Eclipse MicroProfile®
+    stack.appsody.dev/url: https://github.com/kabanero-io/collections/tree/master/incubator/java-microprofile
+    summary: Image for Kabanero java-microprofile development
+    url: https://access.redhat.com/containers/#/registry.access.redhat.com/ubi8/images/8.1-277
+    vcs-ref: c42933bcdbf9f1c232e981a5e40de257c3534c8e
+    vcs-type: git
+    vendor: Kabanero
+    version: 0.2.26
+  creationTimestamp: null
+  labels:
+    image.opencontainers.org/title: cw-microprofile-weather
+    stack.appsody.dev/id: java-microprofile
+    stack.appsody.dev/version: 0.2.27
+  name: cw-microprofile-weather
+spec:
+  applicationImage: dev.local/cw-microprofile-weather
+  createKnativeService: false
+  expose: true
+  livenessProbe:
+    failureThreshold: 12
+    httpGet:
+      path: /health/live
+      port: 9080
+    initialDelaySeconds: 5
+    periodSeconds: 2
+  readinessProbe:
+    failureThreshold: 12
+    httpGet:
+      path: /health/ready
+      port: 9080
+    initialDelaySeconds: 5
+    periodSeconds: 2
+    timeoutSeconds: 1
+  service:
+    annotations:
+      prometheus.io/scrape: "true"
+    port: 9080
+    type: NodePort
+  stack: java-microprofile
+  version: 1.0.0
+status: {}
