@@ -77,11 +77,11 @@ You can create a project in codewind either by pointing to an existing Codewind 
 
 - In eclipse Codewind Explorer view, right click on `Local` connection. Click on `Add Existing Project...`
 
-  ![image-20200728130706404](/Users/murali/Documents/Murali/Work/IBM Developer/1Core/2020/09CP4A-End-to-end_CodePattern/Repos/DocumentationRepo/images/image-20200728130706404.png)
+  ![image-20200728130706404](./images/image-20200728130706404.png)
 
 - In the popup window, browse the parent directory of the cloned repository. Click `Next`.
 
-  ![image-20200728132038806](/Users/murali/Documents/Murali/Work/IBM Developer/1Core/2020/09CP4A-End-to-end_CodePattern/Repos/DocumentationRepo/images/image-20200728132038806.png)
+  ![image-20200728132038806](./images/image-20200728132038806.png)
 
 - Click `Finish`. A new Codewind project is created from the cloned repository. The application will be built and deployed on local docker container to run. The status will change to `Running` after a while.
 
@@ -89,14 +89,14 @@ You can create a project in codewind either by pointing to an existing Codewind 
 
 - Right click on `Local` connection in Codewind explorer view. And click `Create New Project...`.
 
-  ![image-20200728152937914](/Users/murali/Documents/Murali/Work/IBM Developer/1Core/2020/09CP4A-End-to-end_CodePattern/Repos/DocumentationRepo/images/image-20200728152937914.png)
+  ![image-20200728152937914](./images/image-20200728152937914.png)
 
 - In `New Codewind Project` popup window enter `Project name` and select a Kabanero stack template. Click `Finsih`.
 
-  ![image-20200728153542187](/Users/murali/Documents/Murali/Work/IBM Developer/1Core/2020/09CP4A-End-to-end_CodePattern/Repos/DocumentationRepo/images/image-20200728153542187.png)
+  ![image-20200728153542187](./images/image-20200728153542187.png)
 
 - The project gets created in eclipse workspace. Additionally, the application is built and deployed to local docker container. The status of the application will change to `Running` after a while.
-![image-20200728154552408](/Users/murali/Documents/Murali/Work/IBM Developer/1Core/2020/09CP4A-End-to-end_CodePattern/Repos/DocumentationRepo/images/image-20200728154552408.png)
+![image-20200728154552408](./images/image-20200728154552408.png)
 
 - Once the template is initialized successfully, you can edit the project code to include your custom code. The changes are immediately built and deployed.
 
@@ -108,37 +108,37 @@ Since the application we are using accesses weather information from [Open Weath
 
 - Login at https://home.openweathermap.org and click on `API keys` as shown.
 
-  ![image-20200730151353525](/Users/murali/Documents/Murali/Work/IBM Developer/1Core/2020/09CP4A-End-to-end_CodePattern/Repos/DocumentationRepo/images/image-20200730151353525.png)
+  ![image-20200730151353525](./images/image-20200730151353525.png)
 
 - Enter a name for API Key and click `Generate`.
 
-  ![image-20200730151715892](/Users/murali/Documents/Murali/Work/IBM Developer/1Core/2020/09CP4A-End-to-end_CodePattern/Repos/DocumentationRepo/images/image-20200730151715892.png)
+  ![image-20200730151715892](./images/image-20200730151715892.png)
 
 - Copy the api key generated. This key needs to be added in code.
 
 - Go to eclipse IDE and navigate to `WeatherResources.java` file. Double click on the file to open it.
-![image-20200730152140899](/Users/murali/Documents/Murali/Work/IBM Developer/1Core/2020/09CP4A-End-to-end_CodePattern/Repos/DocumentationRepo/images/image-20200730152140899.png)
+![image-20200730152140899](./images/image-20200730152140899.png)
 
 - Around line no. 35, paste the API key that you copied within the double quotes for the variable `apikey`. Save the file.
 
 ##### 5. Run the application
 
 - Now the project is deployed and running on local docker container. To access the application, right-click on the application entry in Codewind Explorer view, and click on `Open Application`. 
-![image-20200728171832454](/Users/murali/Documents/Murali/Work/IBM Developer/1Core/2020/09CP4A-End-to-end_CodePattern/Repos/DocumentationRepo/images/image-20200728171832454.png)
+![image-20200728171832454](./images/image-20200728171832454.png)
 
 - The application home page is launched in a browser.
 
-  ![image-20200728172033843](/Users/murali/Documents/Murali/Work/IBM Developer/1Core/2020/09CP4A-End-to-end_CodePattern/Repos/DocumentationRepo/images/image-20200728172033843.png)
+  ![image-20200728172033843](./images/image-20200728172033843.png)
 
 - Enter either city name or Latitude/Longitude of a location and click on `Submit`. The location's weather details are displayed.
 
-  ![image-20200728172947891](/Users/murali/Documents/Murali/Work/IBM Developer/1Core/2020/09CP4A-End-to-end_CodePattern/Repos/DocumentationRepo/images/image-20200728172947891.png)
+  ![image-20200728172947891](./images/image-20200728172947891.png)
 
 
 
 - You can perform various operations on the application, including checking log files, debugging, monitor performance. 
 
-  ![image-20200728173335118](/Users/murali/Documents/Murali/Work/IBM Developer/1Core/2020/09CP4A-End-to-end_CodePattern/Repos/DocumentationRepo/images/image-20200728173335118.png)
+  ![image-20200728173335118](./images/image-20200728173335118.png)
 
 - You can get more details about these project actions [here](https://www.eclipse.org/codewind/project-actions.html).
 
@@ -195,11 +195,11 @@ In case you have created a new project in Codewind, you may use below instructio
 
 2. a
 
-   ![image-20200728174650612](/Users/murali/Documents/Murali/Work/IBM Developer/1Core/2020/09CP4A-End-to-end_CodePattern/Repos/DocumentationRepo/images/image-20200728174650612.png)
+   ![image-20200728174650612](./images/image-20200728174650612.png)
 
 3. b
 
-   ![image-20200728174736345](/Users/murali/Documents/Murali/Work/IBM Developer/1Core/2020/09CP4A-End-to-end_CodePattern/Repos/DocumentationRepo/images/image-20200728174736345.png)
+   ![image-20200728174736345](./images/image-20200728174736345.png)
 
 4. 
 
@@ -211,21 +211,21 @@ In case you have created a new project in Codewind, you may use below instructio
 
 
 
-![image-20200728173403045](/Users/murali/Documents/Murali/Work/IBM Developer/1Core/2020/09CP4A-End-to-end_CodePattern/Repos/DocumentationRepo/images/image-20200728173403045.png)
+![image-20200728173403045](./images/image-20200728173403045.png)
 
 
 
-![image-20200728173420308](/Users/murali/Documents/Murali/Work/IBM Developer/1Core/2020/09CP4A-End-to-end_CodePattern/Repos/DocumentationRepo/images/image-20200728173420308.png)
+![image-20200728173420308](./images/image-20200728173420308.png)
 
 
 
-![image-20200728173610335](/Users/murali/Documents/Murali/Work/IBM Developer/1Core/2020/09CP4A-End-to-end_CodePattern/Repos/DocumentationRepo/images/image-20200728173610335.png)
+![image-20200728173610335](./images/image-20200728173610335.png)
 
 
 
-![image-20200728173625538](/Users/murali/Documents/Murali/Work/IBM Developer/1Core/2020/09CP4A-End-to-end_CodePattern/Repos/DocumentationRepo/images/image-20200728173625538.png)
+![image-20200728173625538](./images/image-20200728173625538.png)
 
 
 
-![image-20200728174623343](/Users/murali/Documents/Murali/Work/IBM Developer/1Core/2020/09CP4A-End-to-end_CodePattern/Repos/DocumentationRepo/images/image-20200728174623343.png)
+![image-20200728174623343](./images/image-20200728174623343.png)
 
