@@ -183,6 +183,43 @@ In case you have created a new project in Codewind, you may use below instructio
 
 Application code is now pushed to GitHub repository. We will next see how to configure Tekton pipelines in CP4A to achieve CI/CD for the above application.
 
+### Create token for your Github
+
+Before configuring the Tekton Pipeline, you need to create GitHub token so that the pipeline could access your application code. Follow the below steps to create the Github token.
+
+* Open [GitHub](https://github.com) and log into your account.
+* Click your profile photo to expand the account profile menu.
+* From the menu, click 
+` Settings > Developer settings > Personal access tokens`
+* Click the Generate new token button. Provide your Github password again when prompted.
+* Give a descriptive name into the Note field.
+* Select the scopes, or permissions, you’d like to grant this token. To use your token to access repositories from the tekton pipeline, select the repo checkbox. Click the `Generate token` button.
+* Copy the token to your clipboard and make a note of this token safely. For security reasons, after you navigate off the page, you will not be able to see the token again.
+
+### Configure Tekton Pipeline
+
+Launch your Openshift cluster Console and then click on Cloud Pak Console.
+
+In Cloud Pak Console, navigate to `Instances` and then `Manage Pipelines` as shown in snapshot below.
+
+![manage_pipelines](./images/manage-pipelines.png)
+
+In the newly opened tab, click on `Log-in with OpenShift` then it will launch a tekton dashboard.
+
+
+
+
+
+**deploy app in the same namespace**
+
+**deploy app in different namespace**
+
+If you want to deploy your application in different namespace instead of default one which is inthis case is *Kabanero*. Go to Visual Studio and run 
+**appsody build** in your Visual Studio terminal. It will create a deployment configuration file for your project. 
+After the above command executes successfully, you will see a new generated file called *app-deploy.yaml* on the left hand side of your screen. This file will help you to deploy the application on Cloud Pak for Applications in non-default namespace.  Add a namespace section as follows:
+
+
+
 
 
 
