@@ -41,25 +41,26 @@ IBM Cloud Pak for Applications provide a set of project templates. We will confi
 
 - On the home page (scroll a bit down). Click on `View team instance` button. 
 
-  ![image-20200716152755669](./images/image-20200716152755669.png)
+  <img src="./images/image-20200716152755669.png" alt="image-20200716152755669" width="50%" />
 
 - Copy the `Codewind URL`. 
 
-  ![image-20200716153235134](./images/image-20200716153235134.png)
+  <img src="./images/image-20200716153235134.png" alt="image-20200716153235134" width="50%" />
 
 We will use this endpoint with the Stack Management CLI login command to login and manage your stacks. For more information about using the CLI see the [Stack Management CLI documentation](https://ibm-cp-applications.cpindiadevteam-cp-766913-f2c6cdc6801be85fd188b09d006f13e3-0000.us-south.containers.appdomain.cloud/docs/ref/general/reference/kabanero-cli.html).
 
 - Ensure that the `Local` connection in Codewind view is in running status. 
+
 - Right click on the `Local` connection and click `Manage Template Sources...`
-![image-20200724134408853](./images/image-20200724134408853.png)
+<img src="./images/image-20200724134408853.png" alt="image-20200724134408853" width="50%" />
 
 - It opens `Manage Template Sources` window. Click on `Add...` button. 
 
-  ![image-20200724135411078](./images/image-20200724135411078.png)
+  <img src="./images/image-20200724135411078.png" alt="image-20200724135411078" width="50%" />
 
 - In the popup window enter URL - Codewind URL copied earlier. Provide a Name. Optionally add a description. Click `OK`.
 
-  ![image-20200724140039874](./images/image-20200724140039874.png)
+  <img src="./images/image-20200724140039874.png" alt="image-20200724140039874" width="50%" />
 
 - The template gets added to Template Sources. Click the refresh button if the newly added template is not reflecting in the list.
 
@@ -77,11 +78,11 @@ You can create a project in codewind either by pointing to an existing Codewind 
 
 - In eclipse Codewind Explorer view, right click on `Local` connection. Click on `Add Existing Project...`
 
-  ![image-20200728130706404](./images/image-20200728130706404.png)
+  <img src="./images/image-20200728130706404.png" alt="image-20200728130706404" width="50%" />
 
 - In the popup window, browse the parent directory of the cloned repository. Click `Next`.
 
-  ![image-20200728132038806](./images/image-20200728132038806.png)
+  <img src="./images/image-20200728132038806.png" alt="image-20200728132038806" width="50%" />
 
 - Click `Finish`. A new Codewind project is created from the cloned repository. The application will be built and deployed on local docker container to run. The status will change to `Running` after a while.
 
@@ -89,14 +90,14 @@ You can create a project in codewind either by pointing to an existing Codewind 
 
 - Right click on `Local` connection in Codewind explorer view. And click `Create New Project...`.
 
-  ![image-20200728152937914](./images/image-20200728152937914.png)
+  <img src="./images/image-20200728152937914.png" alt="image-20200728152937914" width="50%" />
 
 - In `New Codewind Project` popup window enter `Project name` and select a Kabanero stack template. Click `Finsih`.
 
-  ![image-20200728153542187](./images/image-20200728153542187.png)
+  <img src="./images/image-20200728153542187.png" alt="image-20200728153542187" width="50%" />
 
 - The project gets created in eclipse workspace. Additionally, the application is built and deployed to local docker container. The status of the application will change to `Running` after a while.
-![image-20200728154552408](./images/image-20200728154552408.png)
+<img src="./images/image-20200728154552408.png" alt="image-20200728154552408" width="50%" />
 
 - Once the template is initialized successfully, you can edit the project code to include your custom code. The changes are immediately built and deployed.
 
@@ -117,28 +118,28 @@ Since the application we are using accesses weather information from [Open Weath
 - Copy the api key generated. This key needs to be added in code.
 
 - Go to eclipse IDE and navigate to `WeatherResources.java` file. Double click on the file to open it.
-![image-20200730152140899](./images/image-20200730152140899.png)
+<img src="./images/image-20200730152140899.png" alt="image-20200730152140899" width="50%" />
 
 - Around line no. 35, paste the API key that you copied within the double quotes for the variable `apikey`. Save the file.
 
 ##### 5. Run the application
 
 - Now the project is deployed and running on local docker container. To access the application, right-click on the application entry in Codewind Explorer view, and click on `Open Application`. 
-![image-20200728171832454](./images/image-20200728171832454.png)
+<img src="./images/image-20200728171832454.png" alt="image-20200728171832454" width="50%" />
 
 - The application home page is launched in a browser.
 
-  ![image-20200728172033843](./images/image-20200728172033843.png)
+  <img src="./images/image-20200728172033843.png" alt="image-20200728172033843" width="50%" />
 
 - Enter either city name or Latitude/Longitude of a location and click on `Submit`. The location's weather details are displayed.
 
-  ![image-20200728172947891](./images/image-20200728172947891.png)
+  <img src="./images/image-20200728172947891.png" alt="image-20200728172947891" width="50%" />
 
 
 
 - You can perform various operations on the application, including checking log files, debugging, monitor performance. 
 
-  ![image-20200728173335118](./images/image-20200728173335118.png)
+  <img src="./images/image-20200728173335118.png" alt="image-20200728173335118" width="50%" />
 
 - You can get more details about these project actions [here](https://www.eclipse.org/codewind/project-actions.html).
 
@@ -215,17 +216,17 @@ In case you have created a new project in Codewind, you may use below instructio
 
 
 
-![image-20200728173420308](./images/image-20200728173420308.png)
+<img src="./images/image-20200728173420308.png" alt="image-20200728173420308" width="50%" />
 
 
 
-![image-20200728173610335](./images/image-20200728173610335.png)
+<img src="./images/image-20200728173610335.png" alt="image-20200728173610335" width="50%" />
 
 
 
-![image-20200728173625538](./images/image-20200728173625538.png)
+<img src="./images/image-20200728173625538.png" alt="image-20200728173625538" width="50%" />
 
 
 
-![image-20200728174623343](./images/image-20200728174623343.png)
+<img src="./images/image-20200728174623343.png" alt="image-20200728174623343" width="50%" />
 
