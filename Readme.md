@@ -1,6 +1,6 @@
 ## Work-in-progress
 
-# Build and Deploy Cloud-Native application using Accelerator for Teams in IBM Cloud Pak for Applications
+## Build and Deploy Cloud-Native application using Accelerator for Teams in IBM Cloud Pak for Applications
 
 ### Develop a weather application using Codewind and deploy using CI/CD Tekton pipelines
 
@@ -54,7 +54,7 @@ Follow the below instructions to build and deploy the weather app to IBM Cloud P
 5. [Run the application locally]()
 6. [Push application code to GitHub repository]()
 7. [Create token for your Github]()
-8. [Configure Tekton Pipeline]()
+8. [Configure and Execute Tekton Pipeline]()
 9. [Access the deployed Application]()
 
 ### 1. Install Codewind and Appsody
@@ -188,9 +188,25 @@ Since the application we are using accesses weather information from [Open Weath
 The deployment manifest for your project is created or updated when you run `appsody build` or `appsody deploy`. The Appsody CLI uses deployment information from the stack and adds various [traceability metadata](https://appsody.dev/docs/reference/metadata) while generating this manifest. You can edit this file to suit your application and store it under source control. Let's create the deployment manifest file. Your deployment configuration is taken care of so that you can focus on your application development.
 
 - On command prompt, change directory to project parent folder.
-- Run `$ appsody build` command
+- Run the following command
+  ```
+  $ appsody build
+  ```
+- When the command runs successfully, it will generate `app-deploy.yaml` files in the project parent folder.
+- Open `app-delpoy.yaml` file and add a namespace section as shown below. Here the namespace name will be the name where you want to deploy your application. In this code pattern, the app will be deployed in `weather-app` namespace which was created using `oc new-project` in OpenShift cluster.
+  > Note: It is recommended that you use separate namespaces either for individual applications/projects.
 
-When the command runs successfully, it would have generated `appsody-config.yaml` file in the project parent folder.
+  ```
+  apiVersion: appsody.dev/v1beta1
+  kind: AppsodyApplication
+  metadata:
+    namespace: weather-app
+    annotations:
+      architecture: x86_64
+      authoritative-source-url: registry.access.redhat.com
+      ....
+  ```
+- Save the file.
 
 ### 7. Push application code to GitHub repository 
 
@@ -237,10 +253,13 @@ Before configuring the Tekton Pipeline, you need to create GitHub token so that 
 * Open [GitHub](https://github.com) and log into your account.
 * Click your profile photo to expand the account profile menu.
 * From the menu, click 
-` Settings > Developer settings > Personal access tokens`
+  ` Settings > Developer settings > Personal access tokens`
 * Click the Generate new token button. Provide your Github password again when prompted.
+
+  ![generate-new-token](./images/generate-new-token.png)
+  
 * Give a descriptive name into the Note field.
-* Select the scopes, or permissions, you’d like to grant this token. To use your token to access repositories from the tekton pipeline, select the repo checkbox. Click the `Generate token` button.
+* Select the scopes, or permissions, you’d like to grant this token. To use your token to access repositories from the tekton pipeline, select the `repo` checkbox. Click the `Generate token` button.
 * Copy the token to your clipboard and make a note of this token safely. For security reasons, after you navigate off the page, you will not be able to see the token again.
 
 ### 8. Configure and Execute Tekton Pipeline
@@ -272,7 +291,7 @@ In the newly opened tab, click on `Log-in with OpenShift` then it will launch a 
     * select **Namespace** as `kabanero`.
     * select **Pipeline** as per your application requirement. Here in this code pattern, a weather app is developed in Java and will be deployed using OpenLiberty hence select `java-openliberty-build-deploy-pl`.
     * select **Service Account** as `kabanero-operator`.
-    * **Docker Registry** is the url where the container image will be pushed. You can add For OpenShift cluster 4.x, integrated OpenShift container registry URL is `image-registry.openshift-image-registry.svc:5000/<namespace-name>`. Alternatively, you can add your own Docker Hub registry or IBM Container Registry URL.
+    * **Docker Registry** is the url where the container image will be pushed. You can add your own Docker Hub registry, IBM Container Registry or integrated OpenShift Container Platform Registry. For OpenShift cluster 4.x, integrated OpenShift container registry URL is `image-registry.openshift-image-registry.svc:5000/<namespace-name>`, where namespace name is the project name where you want to deploy your application. It should be the same namespace which you have added in `app-deploy.yaml` in step 6 above.
     
 ![webhook-settings](./images/webhook-settings.png)
 
@@ -281,6 +300,7 @@ In the newly opened tab, click on `Log-in with OpenShift` then it will launch a 
 **Validate Webhook**
 
 * Validate that Tekton and GitHub are successfully connected by opening your Github repository. Go to `Your Github repository > Settings -> Webhooks`. It should show a link as shown.
+
 ![webhook-repo-settings](./images/webhook-repo-settings.png)
 
 **Trigger Tekton Pipeline**
@@ -290,17 +310,6 @@ In the newly opened tab, click on `Log-in with OpenShift` then it will launch a 
 * Check your Tekton dashboard. Under the Tekton resources list, select `PipelineRuns`. It should show the pipelinerun in-progress. Wait for this one to get completed.
 
 When the pipeline run completes, check that the application is deployed to OpenShift by running the following command:
-
-
-
-**deploy app in the same namespace**
-
-**deploy app in different namespace**
-
-If you want to deploy your application in different namespace instead of default one which is inthis case is *Kabanero*. Go to Visual Studio and run 
-**appsody build** in your Visual Studio terminal. It will create a deployment configuration file for your project. 
-After the above command executes successfully, you will see a new generated file called *app-deploy.yaml* on the left hand side of your screen. This file will help you to deploy the application on Cloud Pak for Applications in non-default namespace.  Add a namespace section as follows:
-
 
 
 
