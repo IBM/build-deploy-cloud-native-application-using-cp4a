@@ -38,7 +38,7 @@ Follow the below instructions to build and deploy the weather app to IBM Cloud P
 2. [Add Kabanero stack templates to Codewind]()
 3. [Create a project in Codewind]()
 4. [Get API Key from Open Weather]()
-5. [Run the application]()
+5. [Run the application locally]()
 6. [Push application code to GitHub repository]()
 7. [Create token for your Github]()
 8. [Configure Tekton Pipeline]()
@@ -139,7 +139,7 @@ Since the application we are using accesses weather information from [Open Weath
 
 - Around line no. 35, paste the API key that you copied within the double quotes for the variable `apikey`. Save the file. The changes get deployed.
 
-### 5. Run the application
+### 5. Run the application locally
 
 - Now the project is deployed and running on local docker container. To access the application, right-click on the application entry in Codewind Explorer view, and click on `Open Application`. 
 <img src="./images/image-20200728171832454.png" alt="image-20200728171832454" width="50%" />
