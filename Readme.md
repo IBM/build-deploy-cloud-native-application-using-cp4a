@@ -243,7 +243,7 @@ Before configuring the Tekton Pipeline, you need to create GitHub token so that 
 * Select the scopes, or permissions, you’d like to grant this token. To use your token to access repositories from the tekton pipeline, select the repo checkbox. Click the `Generate token` button.
 * Copy the token to your clipboard and make a note of this token safely. For security reasons, after you navigate off the page, you will not be able to see the token again.
 
-### 8. Configure Tekton Pipeline
+### 8. Configure and Execute Tekton Pipeline
 
 Launch your Openshift cluster Console and then click on Cloud Pak Console.
 
@@ -255,34 +255,41 @@ In the newly opened tab, click on `Log-in with OpenShift` then it will launch a 
 
 ![tekton-dashboard](./images/tekton-dashboard.png)
 
-**Tekton Dashboard** shows tekton resources, namespace, secret, service accounts, webhooks etc. The IBM Cloud Pak for Applications also provides some pre-configured pipelines for java and nodejs application in Kabanero namespace. If incase existing pipelines does not fulfill the purpose then you can write your own pipeline code and use `Import Tekton Resources` option. Here in this code pattern we are using the pre-configured pipeline for java application. As a first step, you need to create the webhook.
+**Tekton Dashboard** shows tekton resources, namespace, secret, service accounts, webhooks etc. The IBM Cloud Pak for Application also provides some pre-configured pipelines for Java and NodeJs application in Kabanero namespace. If incase existing pipelines does not fulfil the purpose then you can write your own pipeline code and use `Import Tekton Resources` option. Here in this code pattern, the pre-configured pipeline is used for the weather app (Java application). As a first step, you need to create the webhook.
 
 **Create Webhook**
-* Select Webhooks from the left-side menu of the tekton dashboard.
-* Click `Add Webhook`
-* Provide the required values. Under Webhook Settings
-    * name is your webhook name 
-    * repositry URL is your github repository where application code resides
-    * access token is the token to access your github repository created in the previous step. Add the token using `+` icon.
-* Under Target Pipeline Settings
-    * choose Namespace as the default namespace i.e. kabanero
-    * choose pipeline as per your application requirement. Here we are using a weather app using Java so choosing ``
-    * For preconfigured pipeline, service account will be kabanero-operator
-    * Docker registry is the url where you want to push your container image followed by the namespace name. For OpenShift cluster 4.x, integrated container registry URL is `image-registry.openshift-image-registry.svc:5000/`
-    
 
+* Select `Webhooks` from the left-side menu of the tekton dashboard.
+
+* Click `Add Webhook`. The Create Webhook pane opens.
+
+* Under `Webhook Settings` enter the following information:
+    * **Name** is your webhook name. Choose a unique webhook name.
+    * **Repositry URL** is your github repository URL where the application code resides
+    * **Access Token** is the token to access your github repository that you created in the previous step. Click the add (+) button and enter a name for this secret and the GitHub Access Token into the fields provided.
+    
+* Under `Target Pipeline Settings` provide the following information:
+    * select **Namespace** as `kabanero`.
+    * select **Pipeline** as per your application requirement. Here in this code pattern, a weather app is developed in Java and will be deployed using OpenLiberty hence select `java-openliberty-build-deploy-pl`.
+    * select **Service Account** as `kabanero-operator`.
+    * **Docker Registry** is the url where the container image will be pushed. You can add For OpenShift cluster 4.x, integrated OpenShift container registry URL is `image-registry.openshift-image-registry.svc:5000/<namespace-name>`. Alternatively, you can add your own Docker Hub registry or IBM Container Registry URL.
+    
 ![webhook-settings](./images/webhook-settings.png)
 
 * Click `Create`.
 
-Check that Tekton and GitHub are successfully connected by opening your Github repository. Go to `your github repository > Settings -> Webhooks`. It should show a link as shown.
+**Validate Webhook**
+
+* Validate that Tekton and GitHub are successfully connected by opening your Github repository. Go to `Your Github repository > Settings -> Webhooks`. It should show a link as shown.
 ![webhook-repo-settings](./images/webhook-repo-settings.png)
 
-* Now, make some changes in the code of your github repository to trigger pipeline.
+**Trigger Tekton Pipeline**
 
-* Open your Tekton dashboard. Under the Tekton resources list, select PipelineRuns. It should show one pipelinerun in progress. Wait for this one to get completed.
+* Make some changes in your Github code repository or merge a pull request in the GitHub code repository, it will trigger the pipeline.
 
+* Check your Tekton dashboard. Under the Tekton resources list, select `PipelineRuns`. It should show the pipelinerun in-progress. Wait for this one to get completed.
 
+When the pipeline run completes, check that the application is deployed to OpenShift by running the following command:
 
 
 
@@ -293,6 +300,8 @@ Check that Tekton and GitHub are successfully connected by opening your Github r
 If you want to deploy your application in different namespace instead of default one which is inthis case is *Kabanero*. Go to Visual Studio and run 
 **appsody build** in your Visual Studio terminal. It will create a deployment configuration file for your project. 
 After the above command executes successfully, you will see a new generated file called *app-deploy.yaml* on the left hand side of your screen. This file will help you to deploy the application on Cloud Pak for Applications in non-default namespace.  Add a namespace section as follows:
+
+
 
 
 
