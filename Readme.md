@@ -5,6 +5,19 @@
 ### Develop a weather application using Codewind and deploy using CI/CD Tekton pipelines
 
 
+
+IBM Cloud Pak for Applications helps you modernize existing applications, embed additional security, and develop new apps that unleash digital initiatives. It offers cloud-native development solutions that can quickly deliver value, along with flexible licensing that can be tailored to your specific needs.
+
+Apps that are built in the cloud are typically more scalable, easier to update and less costly to run. This can help you to respond to customer needs faster.
+
+In this code pattern, we will use Accelerators for Teams of IBM Cloud Pak for Applications (CP4A) to demonstrate how to develop a cloud-native application and deploy it on Cloud Pak for Applications using CI/CD features. We will develop a simple Java weather application. We will use Codewind to develop, Appsody to build and Tekton for Continous delivery. 
+
+
+
+
+
+
+
 **IBM Accelerator for Teams - overview**
 
 Accelerator for Teams is the commercial enterprise-ready and fully supported implementation of the Kabanero open source community project. Accelerator for Teams integrates with, extends, and adds value to Red Hat OpenShift. Accelerator for Teams supports the activity of application developers, architects, and operations teams in developing, managing, and deploying cloud native applications that meet the requirements of an organization. The product enables Continuous Integration / Continuous Deployment (CI/CD) workflows across the end to end development lifecycle.
@@ -34,8 +47,8 @@ Follow the below instructions to build and deploy the weather app to IBM Cloud P
 
 ## Steps
 
-1. [Install runtimes]()
-2. [Add Kabanero stack templates to Codewind]()
+1. [Install Codewind and Appsody]()
+2. [Add project templates to Codewind]()
 3. [Create a project in Codewind]()
 4. [Get API Key from Open Weather]()
 5. [Run the application locally]()
@@ -44,17 +57,17 @@ Follow the below instructions to build and deploy the weather app to IBM Cloud P
 8. [Configure Tekton Pipeline]()
 9. [Access the deployed Application]()
 
-### 1. Install runtimes
+### 1. Install Codewind and Appsody
 
 
 - Appsody. Refer this [installation instructions](https://appsody.dev/docs/installing/installing-appsody/).
 
 - Install Codewind on eclipse. You may use these [instructions](https://www.eclipse.org/codewind/eclipse-getting-started.html#installing-codewind-for-eclipse).
 
-### 2. Add Kabanero stack templates to Codewind
+### 2. Add project templates to Codewind
 
 IBM Cloud Pak for Applications provide a set of project templates. We will configure Codewind to use this template to create projects so that we have all the necessary resources readily available to deploy application to CP4A.
-- Login to your ICPA instance
+- Login to your CP4A instance.
 
 - On the home page (scroll a bit down). Click on `View team instance` button. 
 
@@ -87,10 +100,18 @@ You can create a project in codewind either by pointing to an existing Codewind 
 
 #### 3.1 Add an existing project
 
-- For the sake of this code pattern, we have a readily available [Codewind project - Add actual Java repo link](https://github.com/muralidharchavan/cw-mf-weather-app). Clone the repo. Run below command to clone the repo at a path of your choice.
+- For the sake of this code pattern, we have a readily available [Codewind project](https://github.com/IBM/build-deploy-manage-cloud-native-application-on-openshift). 
+
+- Fork that GitHub repo. To fork the repo, on the top right page of the repo on GitHub, click on `Fork` button.
+
+- Copy link for cloning. Go to your copy of the repo on GitHub. Click on `Code` dropdown. Copy the link provided in the text field.
+
+  <img src="/Users/murali/Documents/Murali/Work/IBM Developer/1Core/2020/09CP4A-End-to-end_CodePattern/Repos/GitIBMRepo/build-deploy-manage-cloud-native-application-on-openshift/images/image-20200804155655109.png" alt="image-20200804155655109" width="50%;" />
+  
+- Clone your repo. Run below command to clone the repo at a path of your choice.
 
   ```
-  $ git clone git@github.com:muralidharchavan/cw-mf-weather-app.git
+  $ git clone <link copied in above step>
   ```
 
 - In eclipse Codewind Explorer view, right click on `Local` connection. Click on `Add Existing Project...`
@@ -162,7 +183,16 @@ Since the application we are using accesses weather information from [Open Weath
 
   
 
-### 6. Push application code to GitHub repository 
+### 6. Prepare application to be deployed to CP4A
+
+The deployment manifest for your project is created or updated when you run `appsody build` or `appsody deploy`. The Appsody CLI uses deployment information from the stack and adds various [traceability metadata](https://appsody.dev/docs/reference/metadata) while generating this manifest. You can edit this file to suit your application and store it under source control. Let's create the deployment manifest file. Your deployment configuration is taken care of so that you can focus on your application development.
+
+- On command prompt, change directory to project parent folder.
+- Run `$ appsody build` command
+
+When the command runs successfully, it would have generated `appsody-config.yaml` file in the project parent folder.
+
+### 7. Push application code to GitHub repository 
 
 Once you have added your code into the application and have tested the same, now it is time to deploy the code to IBM Cloud Pak for Application. We will use Tekton pipelines to deploy the application to CP4A. For Tekton pipelines to access the code, we will push our application code to Git repository.
 
@@ -225,7 +255,7 @@ In the newly opened tab, click on `Log-in with OpenShift` then it will launch a 
 
 ![tekton-dashboard](./images/tekton-dashboard.png)
 
-**Tekton Dashboard** shows tekton resources, namespace, secret, service accounts, webhooks etc. The IBM Cloud Pak for Application also provides some pre-configured pipelines for java and nodejs application in Kabanero namespace. If incase existing pipelines does not fulfill the purpose then you can write your own pipeline code and use `Import Tekton Resources` option. Here in this code pattern we are using the pre-configured pipeline for java application. As a first step, you need to create the webhook.
+**Tekton Dashboard** shows tekton resources, namespace, secret, service accounts, webhooks etc. The IBM Cloud Pak for Applications also provides some pre-configured pipelines for java and nodejs application in Kabanero namespace. If incase existing pipelines does not fulfill the purpose then you can write your own pipeline code and use `Import Tekton Resources` option. Here in this code pattern we are using the pre-configured pipeline for java application. As a first step, you need to create the webhook.
 
 **Create Webhook**
 * Select Webhooks from the left-side menu of the tekton dashboard.
@@ -240,6 +270,7 @@ In the newly opened tab, click on `Log-in with OpenShift` then it will launch a 
     * For preconfigured pipeline, service account will be kabanero-operator
     * Docker registry is the url where you want to push your container image followed by the namespace name. For OpenShift cluster 4.x, integrated container registry URL is `image-registry.openshift-image-registry.svc:5000/`
     
+
 ![webhook-settings](./images/webhook-settings.png)
 
 * Click `Create`.
