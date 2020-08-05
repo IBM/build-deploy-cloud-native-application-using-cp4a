@@ -1,26 +1,24 @@
 ## Work-in-progress
 
-## Build and Deploy Cloud-Native application using Accelerator for Teams in IBM Cloud Pak for Applications
+## Build and Deploy Cloud-Native Java application using IBM Cloud Pak for Applications
 
 ### Develop a weather application using Codewind and deploy using CI/CD Tekton pipelines
 
 
-IBM Cloud Pak for Applications(CP4A) helps you modernize existing applications, embed additional security, and develop new apps that unleash digital initiatives. It offers cloud-native development solutions that can quickly deliver value, along with flexible licensing that can be tailored to your specific needs. Apps that are built in the cloud are typically more scalable, easier to update and less costly to run. This can help you to respond to customer needs faster.
+IBM Cloud Pak for Applications (CP4A) helps you modernize existing applications and develop new cloud-native applications that can quickly deliver value and can be tailored to your specific needs. This can help you to respond to customer needs faster.
 
-In this code pattern, we use Accelerators for Teams of CP4A to demonstrate how to develop a cloud-native application and deploy it on CP4A using CI/CD features. We develop a simple Java weather application. We use Codewind to develop, Appsody to build and Tekton for Continous delivery. 
+In this code pattern, you will use the Accelerators for Teams feature of CP4A to demonstrate how to develop a cloud-native application and deploy it on OpenShift using CI/CD features. 
 
+**Accelerator for Teams of CP4A - overview**
 
-**IBM Accelerator for Teams - overview**
+Accelerator for Teams is the enterprise-ready and fully supported implementation of the Kabanero open source community project. The product enables Continuous Integration / Continuous Deployment (CI/CD) workflows across the end to end development lifecycle using Appsody, Codewind and Tekton (DevOps toolchain). Kabanero integrates application stack hubs which enable developers to use runtimes and frameworks in pre-built container images.
 
-Accelerator for Teams is the enterprise-ready and fully supported implementation of the Kabanero open source community project. Accelerator for Teams integrates with, extends, and adds value to Red Hat OpenShift. Accelerator for Teams supports the activity of application developers, architects, and operations teams in developing, managing, and deploying cloud native applications that meet the requirements of an organization. The product enables Continuous Integration / Continuous Deployment (CI/CD) workflows across the end to end development lifecycle.
+Kabanero's developer experience for IDEs is provided by Eclipse Codewind. 1-1 For more information on how Kabanero and its components work, please refer [here](https://kabanero.io/docs/ref/general/overview/architecture-overview.html).
 
+You will develop a simple Java weather application using Codewind and Tekton pipeline for Continous delivery in this code pattern. 
 
-Kabanero installs on OpenShift and integrates a modern DevOps toolchain and application stack hubs which enable developers to use runtimes and frameworks in pre-built container images called `Application stacks`.
-
-Kabanero's developer experience for IDEs is provided by Eclipse Codewind. For more information on how Kabanero and its components work, visit [Kabanero's Architecture and Development Workflows](https://kabanero.io/docs/ref/general/overview/architecture-overview.html).
-
-Eclipse Codewind provides the ability to create application projects from these `Application Stacks` that your company has built, enabling developers to focus on their code and not infrastructure and Kubernetes.  These include IBM Cloud starters, OpenShift Do (odo), and Appsody templates. Today, there are templates for: IBM Cloud Starters, odo, Eclipse MicroProfile/Java EE, Springboot, Node.js, Node.js with Express, Node.js with Loopback. Application deployments to Kubernetes occur via pipelines when developers commit their local code to the correct Git repos Kabanero is managing via webhooks.
-
+1 - reference blueprint
+> Accelerator for Teams supports the activity of application developers, architects, and operations teams in developing, managing, and deploying cloud native applications that meet the requirements of an organization.
 
 After completeing this code pattern, you will understand how to:
 * build a simple Java application using Codewind on Eclipse
