@@ -185,7 +185,7 @@ Since the application we are using accesses weather information from [Open Weath
 
 ### 6. Prepare application to be deployed to CP4A
 
-The deployment manifest for your project is created or updated when you run `appsody build` or `appsody deploy`. The Appsody CLI uses deployment information from the stack and adds various [traceability metadata](https://appsody.dev/docs/reference/metadata) while generating this manifest. You can edit this file to suit your application and store it under source control. Let's create the deployment manifest file. Your deployment configuration is taken care of so that you can focus on your application development.
+The deployment manifest for your project is created when you run `appsody build`. The Appsody CLI uses deployment information from the stack and adds various [traceability metadata](https://appsody.dev/docs/reference/metadata) while generating this manifest. You can edit this file to suit your application and store it under source control. Your deployment configuration is taken care of so that you can focus on your application development. Let's create the deployment manifest file which will be used for application deployment.
 
 - On command prompt, change directory to project parent folder.
 - Run the following command
@@ -193,7 +193,7 @@ The deployment manifest for your project is created or updated when you run `app
   $ appsody build
   ```
 - When the command runs successfully, it will generate `app-deploy.yaml` files in the project parent folder.
-- Open `app-delpoy.yaml` file and add a namespace section as shown below. Here the namespace name will be the name where you want to deploy your application. In this code pattern, the app will be deployed in `weather-app` namespace which was created using `oc new-project` in OpenShift cluster.
+- Open `app-delpoy.yaml` file and add a namespace section as shown below. Here the namespace name will be the name where you want to deploy your application. In this code pattern, the app will be deployed in `weather-app` namespace which was created using `oc new-project` in the OpenShift cluster. You can use `kabanero` namespace as well.
   > Note: It is recommended that you use separate namespaces either for individual applications/projects.
 
   ```
@@ -210,30 +210,21 @@ The deployment manifest for your project is created or updated when you run `app
 
 ### 7. Push application code to GitHub repository 
 
-Once you have added your code into the application and have tested the same, now it is time to deploy the code to IBM Cloud Pak for Application. We will use Tekton pipelines to deploy the application to CP4A. For Tekton pipelines to access the code, we will push our application code to Git repository.
-
-###### If you have cloned repo
-
-If you have already cloned the repo and using it for this code pattern, then you just need to check-in updated files back to git repository. You may use the below commands from the parent folder of the cloned repository.
-
-```
-$ git add -u
-$ git commit -m "<your comments>"
-$ git remote add origin <git url>
-$ git push -u origin master # Change branch name if other than master
-```
-
-
-
-###### If you have created a new project
-
-In case you have created a new project in Codewind, you may use below instructions to push the code to Git Repo.
+Once you have added your code into the application and have tested the same, now it is time to deploy the code to the OpenShift Cluster using IBM Cloud Pak for Application. In this code pattern, Tekton pipelines from CP4A is used to deploy the application. To make the application code accessible for pipeline, need to push our application code to GitHub repository.
 
 - Create a new repository in [GitHub](https://github.com). 
 
+- ***If you have cloned this repository***
+
+  If you have already cloned the repo and using it for this code pattern, then you need to delete `.git` directory before pushing it to your GitHub. Then follow the steps given next.
+  
+  ***If you have created a new project***
+  
+  In case you have created a new project in Codewind, then use the below commands to push the code to GitHub repository.
+
 - Navigate to parent folder of the project on your local machine.
 
-- Use below commands
+- Run below commands
 
   ```
   $ git init
@@ -242,9 +233,8 @@ In case you have created a new project in Codewind, you may use below instructio
   $ git remote add origin <git url>
   $ git push -u origin master
   ```
-
-
-Application code is now pushed to GitHub repository. We will next see how to configure Tekton pipelines in CP4A to achieve CI/CD for the above application.
+  
+Application code is now pushed to GitHub repository.
 
 ### 7. Create token for your Github
 
@@ -274,7 +264,7 @@ In the newly opened tab, click on `Log-in with OpenShift` then it will launch a 
 
 ![tekton-dashboard](./images/tekton-dashboard.png)
 
-**Tekton Dashboard** shows tekton resources, namespace, secrets, service accounts, webhooks etc. The IBM Cloud Pak for Application provides some pre-defined pipelines for Java and NodeJs application in Kabanero namespace. If incase existing pipelines does not fulfil the purpose then you can write your own pipeline code and use `Import Tekton Resource` option. Here in this code pattern, the pre-defined pipeline is used for the weather app (Java application). The first step towards configuring the pipeline is that you need to create the webhook. Let's start.
+**Tekton Dashboard** shows tekton resources, namespace, secrets, service accounts, webhooks etc. The IBM Cloud Pak for Application provides some pre-defined pipelines for Java and NodeJs application in Kabanero namespace. If the default provided pipelines does not fulfil the purpose then you can write your own pipeline code and use `Import Tekton Resource` option. Here in this code pattern, you will use the pre-defined pipeline for the weather app (Java application). The first step towards configuring the pipeline is that you need to create the webhook. Let's start.
 
 **Create Webhook**
 
@@ -305,23 +295,43 @@ In the newly opened tab, click on `Log-in with OpenShift` then it will launch a 
 
 **Trigger Tekton Pipeline**
 
-* Make some changes in your Github code repository or merge a pull request in the GitHub code repository, it will trigger the pipeline.
+* Make some changes in your Github code repository or merge a pull request in the GitHub code repository. It will trigger the pipeline.
 
-* Check your Tekton dashboard. Under the Tekton resources list, select `PipelineRuns`. It should show the pipelinerun in-progress. 
+* Check your Tekton dashboard. Under the Tekton resources list, select `PipelineRuns`. It should show the pipelinerun in running state. 
 
-![pipeline-triggered](./images/pipeline-triggered.png)
+  ![pipeline-triggered](./images/pipeline-triggered.png)
 
 * Wait for this one to get completed. You can check logs of this pipeline using tekton dashboard. Click on the name of your pipelinerun, it will show you the tasks being executed for your pipeline, logs and its status.
 
-![pipeline-logs](./images/pipeline-logs.png)
+  ![pipeline-logs](./images/pipeline-logs.png)
+  
+  You can also check the status of pipelinerun using `oc describe pipelinerun <pipelinerun-name>` commands. If pipelinerun fails because of any issue then better to check pods and a specific container logs for more details. You can also use Tekton CLI `tkn` for the same purpose.
 
-When the pipeline run completes, check that the application is deployed to OpenShift by running the following command.
+When the pipeline run completes, verify that the application is running using the following commands.
 
+```
+  $ oc get pods -n <namespace-name>
+  $ oc get svc -n <namespace-name>
+```
 
-
+It should show the pod and service corresponding to the application.
 
 ### 9. Access the deployed Application
 
+To access the deployed application, get the URL of the application using following command:
+
+```
+  $ oc get routes -n <namespace-name>
+  
+  ##output will be something like this
+  cp4a-XXX-openliberty   cp4a-weather-app-openliberty.XXXXXX.us-south.containers.appdomain.cloud          cp4a-XXX-openliberty   9080-tcp                 None
+```
+
+It will be visible on the OpenShift Console too as shown:
+
+![dashboard](./images/dashboard.png)
+
+Access the URL and perform various operations as explained in [step 5]() above.
 
 
 
