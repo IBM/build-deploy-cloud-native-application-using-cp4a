@@ -39,11 +39,14 @@ At the end, you will run the application with a simple interface which accepts n
 
 # Flow
 
-![architecture](images/architecture.png)
+<img src="./images/image-20200805163350746.png" alt="image-20200805163350746" width="50%;" />
 
-1. 
-2.
-3.
+
+1. User develops/updates an application using Codewind in Eclipse.
+2. User pushes the code to the GitHub repository.
+3. User configures Tekton Pipeline and defines Github Webhook to get events for code change.
+4. Tekton pipeline builds and deploys the application whenever there is a change in the Github repository.
+5. User accesses the application on the Cloud.
 
 # Instructions
 
