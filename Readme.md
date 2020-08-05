@@ -264,7 +264,7 @@ Before configuring the Tekton Pipeline, you need to create GitHub token so that 
 
 ### 8. Configure and Execute Tekton Pipeline
 
-Launch your Openshift cluster Console and then click on Cloud Pak Console.
+Launch your `Openshift cluster Console` and then click on `Cloud Pak Console`.
 
 In Cloud Pak Console, navigate to `Instances` and then `Manage Pipelines` as shown in snapshot below.
 
@@ -274,7 +274,7 @@ In the newly opened tab, click on `Log-in with OpenShift` then it will launch a 
 
 ![tekton-dashboard](./images/tekton-dashboard.png)
 
-**Tekton Dashboard** shows tekton resources, namespace, secret, service accounts, webhooks etc. The IBM Cloud Pak for Application also provides some pre-configured pipelines for Java and NodeJs application in Kabanero namespace. If incase existing pipelines does not fulfil the purpose then you can write your own pipeline code and use `Import Tekton Resources` option. Here in this code pattern, the pre-configured pipeline is used for the weather app (Java application). As a first step, you need to create the webhook.
+**Tekton Dashboard** shows tekton resources, namespace, secrets, service accounts, webhooks etc. The IBM Cloud Pak for Application provides some pre-defined pipelines for Java and NodeJs application in Kabanero namespace. If incase existing pipelines does not fulfil the purpose then you can write your own pipeline code and use `Import Tekton Resource` option. Here in this code pattern, the pre-defined pipeline is used for the weather app (Java application). The first step towards configuring the pipeline is that you need to create the webhook. Let's start.
 
 **Create Webhook**
 
@@ -307,9 +307,15 @@ In the newly opened tab, click on `Log-in with OpenShift` then it will launch a 
 
 * Make some changes in your Github code repository or merge a pull request in the GitHub code repository, it will trigger the pipeline.
 
-* Check your Tekton dashboard. Under the Tekton resources list, select `PipelineRuns`. It should show the pipelinerun in-progress. Wait for this one to get completed.
+* Check your Tekton dashboard. Under the Tekton resources list, select `PipelineRuns`. It should show the pipelinerun in-progress. 
 
-When the pipeline run completes, check that the application is deployed to OpenShift by running the following command:
+![pipeline-triggered](./images/pipeline-triggered.png)
+
+* Wait for this one to get completed. You can check logs of this pipeline using tekton dashboard. Click on the name of your pipelinerun, it will show you the tasks being executed for your pipeline, logs and its status.
+
+![pipeline-logs](./images/pipeline-logs.png)
+
+When the pipeline run completes, check that the application is deployed to OpenShift by running the following command.
 
 
 
