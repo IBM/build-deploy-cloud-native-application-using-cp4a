@@ -13,12 +13,11 @@ In this code pattern, you will use the Accelerators for Teams feature of CP4A to
 
 Accelerator for Teams is the enterprise-ready and fully supported implementation of the Kabanero open source community project. The product enables Continuous Integration / Continuous Deployment (CI/CD) workflows across the end to end development lifecycle using Appsody, Codewind and Tekton (DevOps toolchain). Kabanero integrates application stack hubs which enable developers to use runtimes and frameworks in pre-built container images.
 
-Kabanero's developer experience for IDEs is provided by Eclipse Codewind. 1-1 For more information on how Kabanero and its components work, please refer [here](https://kabanero.io/docs/ref/general/overview/architecture-overview.html).
+Kabanero's developer experience for IDEs is provided by Codewind, which is used for creating, building, running, and profiling applications. Appsody can be used for deployment, in addition to creating, building, running applications. Tekton pipelines provide consistent, managed, and governed CI/CD processes that react to repository events that occur during code development. For more information on how Kabanero and its components work, refer this [link](https://kabanero.io/docs/ref/general/overview/architecture-overview.html).
 
 You will develop a simple Java weather application using Codewind and Tekton pipeline for Continous delivery in this code pattern. 
 
-1 - reference blueprint
-> Accelerator for Teams supports the activity of application developers, architects, and operations teams in developing, managing, and deploying cloud native applications that meet the requirements of an organization.
+Accelerators deliver innovative technology to speed up the design process. As well as embedding Reference Blueprints that are based on Reference Architectures in the  [Cloud Architecture Center](https://www.ibm.com/cloud/architecture/architectures), they also provide the framework for designing your application from scratch.
 
 After completeing this code pattern, you will understand how to:
 * build a simple Java application using Codewind on Eclipse
@@ -335,8 +334,12 @@ Access the URL and perform various operations as explained in [step 5](#5-run-th
 
 ## Learn More
 
+- [IBM Cloud Pak for Application](https://developer.ibm.com/series/introduction-ibm-cloud-paks-for-applications/)
+- [Introduction to accelerators for cloud-native solutions](https://developer.ibm.com/articles/introduction-to-accelerators-for-cloud-native-solutions/)
+- [Developer’s guide to IBM Cloud Pak for Applications](https://developer.ibm.com/series/developers-guide-to-ibm-cloud-pak-for-applications/)
 
-<!-- keep this -->
+
+
 ## License
 
 This code pattern is licensed under the Apache Software License, Version 2. Separate third-party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1 (DCO)](https://developercertificate.org/) and the [Apache Software License, Version 2](https://www.apache.org/licenses/LICENSE-2.0.txt).
