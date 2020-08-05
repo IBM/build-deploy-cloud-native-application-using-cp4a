@@ -43,7 +43,7 @@ Follow the below instructions to build and deploy the weather app to IBM Cloud P
 
 ## Steps
 
-1. [Install Codewind and Appsody]()
+1. [Install Codewind and Appsody]((#1-install-ibm-cloud-pak-for-applications))
 2. [Add project templates to Codewind]()
 3. [Create a project in Codewind]()
 4. [Get API Key from Open Weather]()
@@ -329,7 +329,17 @@ It will be visible on the OpenShift Console too as shown:
 
 Access the URL and perform various operations as explained in [step 5]() above.
 
+## Learn More
 
+* [ secure microservices based banking application](https://developer.ibm.com/patterns/build-a-secure-microservices-based-application-with-transactional-flows/)
+* 
+
+<!-- keep this -->
+## License
+
+This code pattern is licensed under the Apache Software License, Version 2. Separate third-party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1 (DCO)](https://developercertificate.org/) and the [Apache Software License, Version 2](https://www.apache.org/licenses/LICENSE-2.0.txt).
+
+[Apache Software License (ASL) FAQ](https://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN)
 
 
 ## Backup images - To be deleted if unused
