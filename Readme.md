@@ -102,7 +102,7 @@ You can create a project in codewind either by pointing to an existing Codewind 
 
 - Copy link for cloning. Go to your copy of the repo on GitHub. Click on `Code` dropdown. Copy the link provided in the text field.
 
-  <img src="/Users/murali/Documents/Murali/Work/IBM Developer/1Core/2020/09CP4A-End-to-end_CodePattern/Repos/GitIBMRepo/build-deploy-manage-cloud-native-application-on-openshift/images/image-20200804155655109.png" alt="image-20200804155655109" width="50%;" />
+  <img src="./images/image-20200804155655109.png" alt="image-20200804155655109" width="50%;" />
   
 - Clone your repo. Run below command to clone the repo at a path of your choice.
 
