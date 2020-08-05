@@ -5,24 +5,17 @@
 ### Develop a weather application using Codewind and deploy using CI/CD Tekton pipelines
 
 
-
-IBM Cloud Pak for Applications helps you modernize existing applications, embed additional security, and develop new apps that unleash digital initiatives. It offers cloud-native development solutions that can quickly deliver value, along with flexible licensing that can be tailored to your specific needs.
+IBM Cloud Pak for Applications(CP4A) helps you modernize existing applications, embed additional security, and develop new apps that unleash digital initiatives. It offers cloud-native development solutions that can quickly deliver value, along with flexible licensing that can be tailored to your specific needs.
 
 Apps that are built in the cloud are typically more scalable, easier to update and less costly to run. This can help you to respond to customer needs faster.
 
-In this code pattern, we will use Accelerators for Teams of IBM Cloud Pak for Applications (CP4A) to demonstrate how to develop a cloud-native application and deploy it on Cloud Pak for Applications using CI/CD features. We will develop a simple Java weather application. We will use Codewind to develop, Appsody to build and Tekton for Continous delivery. 
-
-
-
-
-
+In this code pattern, we will use Accelerators for Teams of CP4A to demonstrate how to develop a cloud-native application and deploy it on CP4A using CI/CD features. We will develop a simple Java weather application. We will use Codewind to develop, Appsody to build and Tekton for Continous delivery. 
 
 
 **IBM Accelerator for Teams - overview**
 
-Accelerator for Teams is the commercial enterprise-ready and fully supported implementation of the Kabanero open source community project. Accelerator for Teams integrates with, extends, and adds value to Red Hat OpenShift. Accelerator for Teams supports the activity of application developers, architects, and operations teams in developing, managing, and deploying cloud native applications that meet the requirements of an organization. The product enables Continuous Integration / Continuous Deployment (CI/CD) workflows across the end to end development lifecycle.
+Accelerator for Teams is the enterprise-ready and fully supported implementation of the Kabanero open source community project. Accelerator for Teams integrates with, extends, and adds value to Red Hat OpenShift. Accelerator for Teams supports the activity of application developers, architects, and operations teams in developing, managing, and deploying cloud native applications that meet the requirements of an organization. The product enables Continuous Integration / Continuous Deployment (CI/CD) workflows across the end to end development lifecycle.
 
-Kabanero offers open source technologies in a microservices-based framework that simplifies development, build, and deployment of applications for both Kubernetes and Knative (serverless).
 
 Kabanero installs on OpenShift and integrates a modern DevOps toolchain and application stack hubs which enable developers to use runtimes and frameworks in pre-built container images called `Application stacks`.
 
@@ -31,7 +24,10 @@ Kabanero's developer experience for IDEs is provided by Eclipse Codewind. For mo
 Eclipse Codewind provides the ability to create application projects from these `Application Stacks` that your company has built, enabling developers to focus on their code and not infrastructure and Kubernetes.  These include IBM Cloud starters, OpenShift Do (odo), and Appsody templates. Today, there are templates for: IBM Cloud Starters, odo, Eclipse MicroProfile/Java EE, Springboot, Node.js, Node.js with Express, Node.js with Loopback. Application deployments to Kubernetes occur via pipelines when developers commit their local code to the correct Git repos Kabanero is managing via webhooks.
 
 
-In this code pattern we will build a simple Java application using Codewind on eclipse. We will deploy the Java application to IBM Cloud Pak for Applications using Tekton pipelines. The application has a simple interface which accepts name or lat/lon of a location and provides basic weather details of the location using a weather API.
+After completeing this code pattern, you will understand how to:
+* build a simple Java application using Codewind on Eclipse
+* use Tekton pipelines to deploy the Java application on OpenShift using CP4A 
+At the end, you will perform ....The application has a simple interface which accepts name or lat/lon of a location and provides basic weather details of the location using a weather API.
 
 Follow the below instructions to build and deploy the weather app to IBM Cloud Pak for Applications using Accelerator for Teams.
 
