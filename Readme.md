@@ -30,6 +30,18 @@ At the end, you will run the application with a simple interface which accepts n
 
 ## Flow
 
+<img src="./images/image-20200805163350746.png" alt="image-20200805163350746" width="50%;" />
+
+
+
+1. User develops/updates an application in Codewind.
+2. User pushes the code to GitHub repository.
+3. Tekton gets the information about the changes through GitHub Webhooks.
+4. Tekton pipelines deploy the application.
+5. User accesses the application.
+
+
+
 ## Pre-requisites
 
 * Eclipse editor: You can install the latest version from [here](https://www.eclipse.org/downloads/packages/).
@@ -91,20 +103,15 @@ We will use this endpoint with the Stack Management CLI login command to login a
 
 You can create a project in codewind either by pointing to an existing Codewind project or by creating a new project from scratch. In this demonstration we will use an existing application. However, you can follow any method and create your own application. Let's see both the ways of doing it.
 
+
 #### 3.1 Add an existing project
 
 - For the sake of this code pattern, we have a readily available [Codewind project](https://github.com/IBM/build-deploy-manage-cloud-native-application-on-openshift). 
 
-- Fork that GitHub repo. To fork the repo, on the top right page of the repo on GitHub, click on `Fork` button.
-
-- Copy link for cloning. Go to your copy of the repo on GitHub. Click on `Code` dropdown. Copy the link provided in the text field.
-
-  <img src="./images/image-20200804155655109.png" alt="image-20200804155655109" width="50%;" />
-  
-- Clone your repo. Run below command to clone the repo at a path of your choice.
+- Open terminal application. Change to a directory where you want to clone the existing project. Run the below command to clone the project.
 
   ```
-  $ git clone <link copied in above step>
+  $ git clone git@github.com:IBM/build-deploy-manage-cloud-native-application-on-openshift.git
   ```
 
 - In eclipse Codewind Explorer view, right click on `Local` connection. Click on `Add Existing Project...`
@@ -227,6 +234,7 @@ Once you have added your code into the application and have tested the same, now
   $ git push -u origin master
   ```
   
+
 Application code is now pushed to GitHub repository.
 
 ### 7. Create token for your Github
@@ -276,6 +284,7 @@ In the newly opened tab, click on `Log-in with OpenShift` then it will launch a 
     * select **Service Account** as `kabanero-operator`.
     * **Docker Registry** is the url where the container image will be pushed. You can add your own Docker Hub registry, IBM Container Registry or integrated OpenShift Container Platform Registry. For OpenShift cluster 4.x, integrated OpenShift container registry URL is `image-registry.openshift-image-registry.svc:5000/<namespace-name>`, where namespace name is the project name where you want to deploy your application. It should be the same namespace which you have added in `app-deploy.yaml` in step 6 above.
     
+
 ![webhook-settings](./images/webhook-settings.png)
 
 * Click `Create`.
@@ -335,38 +344,3 @@ Access the URL and perform various operations as explained in [step 5](#5-run-th
 This code pattern is licensed under the Apache Software License, Version 2. Separate third-party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1 (DCO)](https://developercertificate.org/) and the [Apache Software License, Version 2](https://www.apache.org/licenses/LICENSE-2.0.txt).
 
 [Apache Software License (ASL) FAQ](https://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN)
-
-
-
-
-
-### Backup images - To be deleted if unused
-
-
-
-![image-20200728174650612](./images/image-20200728174650612.png)
-
-
-
-![image-20200728174736345](./images/image-20200728174736345.png)
-
-
-
-![image-20200728173403045](./images/image-20200728173403045.png)
-
-
-
-<img src="./images/image-20200728173420308.png" alt="image-20200728173420308" width="50%" />
-
-
-
-<img src="./images/image-20200728173610335.png" alt="image-20200728173610335" width="50%" />
-
-
-
-<img src="./images/image-20200728173625538.png" alt="image-20200728173625538" width="50%" />
-
-
-
-<img src="./images/image-20200728174623343.png" alt="image-20200728174623343" width="50%" />
-
