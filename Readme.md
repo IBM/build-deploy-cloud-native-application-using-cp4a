@@ -5,11 +5,9 @@
 ### Develop a weather application using Codewind and deploy using CI/CD Tekton pipelines
 
 
-IBM Cloud Pak for Applications(CP4A) helps you modernize existing applications, embed additional security, and develop new apps that unleash digital initiatives. It offers cloud-native development solutions that can quickly deliver value, along with flexible licensing that can be tailored to your specific needs.
+IBM Cloud Pak for Applications(CP4A) helps you modernize existing applications, embed additional security, and develop new apps that unleash digital initiatives. It offers cloud-native development solutions that can quickly deliver value, along with flexible licensing that can be tailored to your specific needs. Apps that are built in the cloud are typically more scalable, easier to update and less costly to run. This can help you to respond to customer needs faster.
 
-Apps that are built in the cloud are typically more scalable, easier to update and less costly to run. This can help you to respond to customer needs faster.
-
-In this code pattern, we will use Accelerators for Teams of CP4A to demonstrate how to develop a cloud-native application and deploy it on CP4A using CI/CD features. We will develop a simple Java weather application. We will use Codewind to develop, Appsody to build and Tekton for Continous delivery. 
+In this code pattern, we use Accelerators for Teams of CP4A to demonstrate how to develop a cloud-native application and deploy it on CP4A using CI/CD features. We develop a simple Java weather application. We use Codewind to develop, Appsody to build and Tekton for Continous delivery. 
 
 
 **IBM Accelerator for Teams - overview**
@@ -27,9 +25,8 @@ Eclipse Codewind provides the ability to create application projects from these 
 After completeing this code pattern, you will understand how to:
 * build a simple Java application using Codewind on Eclipse
 * use Tekton pipelines to deploy the Java application on OpenShift using CP4A 
-At the end, you will perform ....The application has a simple interface which accepts name or lat/lon of a location and provides basic weather details of the location using a weather API.
 
-Follow the below instructions to build and deploy the weather app to IBM Cloud Pak for Applications using Accelerator for Teams.
+At the end, you will run the application with a simple interface which accepts name or latitude/longitude of the location and provides basic weather details of the location using Open Weather API.
 
 ## Flow
 
@@ -43,15 +40,15 @@ Follow the below instructions to build and deploy the weather app to IBM Cloud P
 
 ## Steps
 
-1. [Install Codewind and Appsody]((#1-install-ibm-cloud-pak-for-applications))
-2. [Add project templates to Codewind]()
-3. [Create a project in Codewind]()
-4. [Get API Key from Open Weather]()
-5. [Run the application locally]()
-6. [Push application code to GitHub repository]()
-7. [Create token for your Github]()
-8. [Configure and Execute Tekton Pipeline]()
-9. [Access the deployed Application]()
+1. [Install Codewind and Appsody](#1-install-codewind-and-appsody)
+2. [Add project templates to Codewind](#2-add-project-templates-to-codewind)
+3. [Create a project in Codewind](#3-create-a-project-in-codewind)
+4. [Get API Key from Open Weather](#4-get-api-key-from-open-weather)
+5. [Run the application locally](#5-run-the-application-locally)
+6. [Push application code to GitHub repository](#6-push-application-code-to-github-repository)
+7. [Create token for your Github](#7-create-token-for-your-github)
+8. [Configure and Execute Tekton Pipeline](#8-configure-and-execute-tekton-pipeline)
+9. [Access the deployed Application](#9-access-the-deployed-application)
 
 ### 1. Install Codewind and Appsody
 
@@ -327,12 +324,10 @@ It will be visible on the OpenShift Console too as shown:
 
 ![dashboard](./images/dashboard.png)
 
-Access the URL and perform various operations as explained in [step 5]() above.
+Access the URL and perform various operations as explained in [step 5](#5-run-the-application-locally) above.
 
 ## Learn More
 
-* [ secure microservices based banking application](https://developer.ibm.com/patterns/build-a-secure-microservices-based-application-with-transactional-flows/)
-* 
 
 <!-- keep this -->
 ## License
@@ -342,7 +337,10 @@ This code pattern is licensed under the Apache Software License, Version 2. Sepa
 [Apache Software License (ASL) FAQ](https://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN)
 
 
-## Backup images - To be deleted if unused
+
+
+
+### Backup images - To be deleted if unused
 
 
 
