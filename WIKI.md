@@ -1,10 +1,9 @@
 # Short title
 
-Aggregate and query information from web portals using IBM Discovery service
+
 
 # Long title
 
-Retrieve and visualize relevant information from a collection of web portals with a natural language query using IBM Discovery service
 
 # Author
 
@@ -12,7 +11,7 @@ Retrieve and visualize relevant information from a collection of web portals wit
 
 * Manoj Jahgirdar
 * Muralidhar Chavan 
-* Shikha Maheshwari  <shikha.mah@in.ibm.com>
+* [Shikha Maheshwari](shikha.mah@in.ibm.com)
 
 # URLs
 
@@ -22,61 +21,62 @@ Retrieve and visualize relevant information from a collection of web portals wit
 
 # Summary
 
-In this code pattern, we build an application that uses the APIs of IBM Discovery service to create, query, get status and delete a document collection of web portals. The application renders the query results on a custom built web user interface. This provides flexibility for the end-user to design and build the web user interface to suit specific information and visualization requirements. 
+
 
 # Technologies
 
-* [Python](https://developer.ibm.com/technologies/python/): An open-source interpreted high-level programming language for general-purpose programming.
+* [Java](https://developer.ibm.com/technologies/java/): 
 
 # Description
 
-There is a lot of information on the web, and we are always interested in getting the relevant information. The below two common scenarios drive the need for it:
-- There is usually a specific item of interest, and we try to get all the relevant infomration about the item.
-- We have a question and are searching to find the answers for it that is in the web pages.
-
-In this code pattern, we try to address a specific scenario where we try to query for relevant information from a group of web pages. IBM Discovery service provides the ability to crawl through web pages and build a queryable collection. We will use this feature to build an application using which you can:
-- Specify a list of URLs that `Discovery` will crawl to build the collection.
-- Specify a query in `natural language` and get relevant results with insights from `Discovery`.
-- Visualize the top five matching documents, passages and entities for the query
+TODO - 
 
 When you have completed this code pattern, you will understand how to:
-- Use the `Discovery` APIs -
-  - to create a collection using webcrawl.
-  - to get the status of a collection.
-  - to query the collection using natural language
-  - to delete a collection.
-- Parse, read and visualize the results from `Discovery`.
+
+* build a simple Java application using Codewind on Eclipse
+* use Tekton pipelines to deploy the Java application on OpenShift using CP4A
+
+At the end, you will run the application with a simple interface which accepts name or latitude/longitude of the location and provides basic weather details of the location using Open Weather API.
 
 
 # Flow
 
 ![architecture](images/architecture.png)
 
-1. User requests for creation/status/deletion of a collection or queries a collection through a custom built web UI.
-2. The request is sent to a server application on the cloud.
-3. The application invokes an api on the Discovery service using the Watson SDK.
-4. The Discovery service processes the results and sends it back to the application. The results are then visualized by the User.
-
+1. 
+2.
+3.
 
 # Instructions
 
-> Find the detailed steps for this pattern in the [readme file](https://github.com/IBM/discovery-webcrawl-insights/blob/master/README.md). The steps will show you how to:
+> Find the detailed steps for this pattern in the [readme file](https://github.com/IBM/build-deploy-manage-cloud-native-application-on-openshift/blob/master/README.md). The steps will show you how to:
 
-1. Clone the repo
-2. Deploy the application
-3. Analyze the results
+1. Install Codewind and Appsody
+2. Add project templates to Codewind
+3. Create a project in Codewind
+4. Get API Key from Open Weather
+5. Run the application locally
+6. Push application code to GitHub repository
+7. Create token for your Github
+8. Configure and Execute Tekton Pipeline
+9. Access the deployed Application
+
 
 # Components and services
 
-[IBM Discovery](https://www.ibm.com/in-en/cloud/watson-discovery)
+[IBM Cloud Pak for Application]()
+[Kabanero]()
+[Java]()
+[Tekton]()
+
 
 # Runtimes
 
-* Python 3
+* Java
 
 
 # Related IBM Developer content
 
-> List any IBM Developer resources that are closely related to this pattern, such as other patterns, blog posts, tutorials, etc..
-
-* [Learning Path : Getting started with Watson Discoery](https://developer.ibm.com/technologies/artificial-intelligence/series/learning-path-watson-discovery/)
+* [Deep dive on IBM Cloud Pak for Application](https://developer.ibm.com/videos/deep-dive-on-ibm-cloud-pak-for-applications/)
+* [Introduction to IBM Cloud Pak for Application](https://developer.ibm.com/series/introduction-ibm-cloud-paks-for-applications/)
+* [Introduction to Accelerator for Teams](https://developer.ibm.com/articles/introduction-to-accelerators-for-cloud-native-solutions/)
