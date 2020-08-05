@@ -7,8 +7,6 @@
 
 # Author
 
-> Provide names and IBM email addresses.
-
 * Manoj Jahgirdar
 * Muralidhar Chavan 
 * [Shikha Maheshwari](shikha.mah@in.ibm.com)
@@ -65,8 +63,11 @@ At the end, you will run the application with a simple interface which accepts n
 # Components and services
 
 [IBM Cloud Pak for Application]()
+
 [Kabanero]()
+
 [Java]()
+
 [Tekton]()
 
 
