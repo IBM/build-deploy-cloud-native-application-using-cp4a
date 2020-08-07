@@ -176,6 +176,7 @@ Since the application provided in this repository accesses weather information f
 ### 5. Run the application locally
 
 - Now the project is deployed and running on local docker container. To access the application, right-click on the application entry in Codewind Explorer view, and click on `Open Application`. 
+
   <img src="./images/image-20200728171832454.png" alt="image-20200728171832454" width="50%" />
 
 - The application home page is launched in a browser.
