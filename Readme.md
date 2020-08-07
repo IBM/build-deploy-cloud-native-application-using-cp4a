@@ -41,10 +41,9 @@ At the end, you will run the application with a simple interface which accepts n
 ## Pre-requisites
 
 * Eclipse editor: You can install the latest version from [here](https://www.eclipse.org/downloads/packages/).
-
 * Docker: Install [Docker](https://docs.docker.com/install/) 17.06 or later. If you use Linux, you must also install [Docker Compose](https://docs.docker.com/compose/install/).
-
 * Cloud Pak for Applications instance: Refer this [link](https://cloud.ibm.com/catalog/content/ibm-cp-applications-b4fbe4b9-a9de-406a-94de-5e0c7dc20bf7-global) for details.
+* OpenShift command-line interface (CLI). Refer these [instructions](https://docs.openshift.com/container-platform/4.3/cli_reference/openshift_cli/getting-started-cli.html#installing-the-cli) to install OC CLI on your local machine.
 
 ## Steps
 
