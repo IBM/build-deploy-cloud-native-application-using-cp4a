@@ -15,11 +15,11 @@ Accelerator for Teams is the enterprise-ready and fully supported implementation
 
 Kabanero's developer experience for IDEs is provided by Codewind, which is used for creating, building, running, and profiling applications. Appsody can be used for deployment, in addition to creating, building, running applications. Tekton pipelines provide consistent, managed, and governed CI/CD processes that react to repository events that occur during code development. For more information on how Kabanero and its components work, refer this [link](https://kabanero.io/docs/ref/general/overview/architecture-overview.html).
 
-You will develop a simple Java weather application using Codewind and Tekton pipeline for Continous delivery in this code pattern. 
+You will develop a simple Java weather application using Codewind and Tekton pipeline for Continuous delivery in this code pattern. 
 
 Accelerators deliver innovative technology to speed up the design process. As well as embedding Reference Blueprints that are based on Reference Architectures in the  [Cloud Architecture Center](https://www.ibm.com/cloud/architecture/architectures), they also provide the framework for designing your application from scratch.
 
-After completeing this code pattern, you will understand how to:
+After completing this code pattern, you will understand how to:
 * build a simple Java application using Codewind on Eclipse
 * use Tekton pipelines to deploy the Java application on OpenShift using CP4A 
 
@@ -33,8 +33,8 @@ At the end, you will run the application with a simple interface which accepts n
 
 1. User develops/updates an application using Codewind in Eclipse.
 2. User pushes the code to the GitHub repository.
-3. User configures Tekton Pipeline and defines Github Webhook to get events for code change.
-4. Tekton pipeline builds and deploys the application whenever there is a change in the Github repository.
+3. User configures Tekton Pipeline and defines GitHub Webhook to get events for code change.
+4. Tekton pipeline builds and deploys the application whenever there is a change in the GitHub repository.
 5. User accesses the application on the Cloud.
 
 
@@ -69,9 +69,15 @@ At the end, you will run the application with a simple interface which accepts n
 ### 2. Add project templates to Codewind
 
 IBM Cloud Pak for Applications provide a set of project templates. We will configure Codewind to use this template to create projects so that we have all the necessary resources readily available to deploy application to CP4A.
-- Login to your CP4A instance.
+- Access OpenShift Cluster Web Console on IBM Cloud.
 
-- On the home page (scroll a bit down). Click on `View team instance` button. 
+  ![image-20200807110815480](./images/image-20200807110815480.png)
+
+- On OpenShift Web Console, click the grid icon on the top and click `Cloud Pak Console`.
+
+  ![image-20200807111055016](./images/image-20200807111055016.png)
+
+- On Cloud Pak Console, click on `View team instance` button (Scroll a bit down on the home page)
 
   <img src="./images/image-20200716152755669.png" alt="image-20200716152755669" width="50%" />
 
@@ -79,12 +85,19 @@ IBM Cloud Pak for Applications provide a set of project templates. We will confi
 
   <img src="./images/image-20200716153235134.png" alt="image-20200716153235134" width="50%" />
 
-We will use this endpoint with the Stack Management CLI login command to login and manage your stacks. For more information about using the CLI see the [Stack Management CLI documentation](https://ibm-cp-applications.cpindiadevteam-cp-766913-f2c6cdc6801be85fd188b09d006f13e3-0000.us-south.containers.appdomain.cloud/docs/ref/general/reference/kabanero-cli.html).
+The Codewind project templates needs to be added to Codewind in Eclipse IDE. 
 
-- Ensure that the `Local` connection in Codewind view is in running status. 
+- Go to Eclipse IDE > Codewind explorer view (Menu > Window > Show View > Other.. and search for Codewind )
+
+- In Codewind Explorer view, ensure that the `Local` connection in Codewind view is in running status. 
+
+  <img src="./images/image-20200807112904302.png" alt="image-20200807112904302" width="50%;" />
 
 - Right click on the `Local` connection and click `Manage Template Sources...`
-<img src="./images/image-20200724134408853.png" alt="image-20200724134408853" width="50%" />
+
+  <img src="./images/image-20200724134408853.png" alt="image-20200724134408853" width="50%" />
+
+  
 
 - It opens `Manage Template Sources` window. Click on `Add...` button. 
 
@@ -98,17 +111,18 @@ We will use this endpoint with the Stack Management CLI login command to login a
 
 ### 3. Create a project in Codewind
 
-You can create a project in codewind either by pointing to an existing Codewind project or by creating a new project from scratch. In this demonstration we will use an existing application. However, you can follow any method and create your own application. Let's see both the ways of doing it.
+You can create a project in Codewind either by pointing to an existing Codewind project or by creating a new project from scratch. In this demonstration we will use an existing application. 
 
+> If you wish to create a new project, you can do it. Ensure you select a project template from Kabanero Stack that were referenced in Codewind as explained in step 2 above.
 
-#### 3.1 Add an existing project
+For the sake of this code pattern, we have a readily available [Codewind project](https://github.com/IBM/build-deploy-cloud-native-application-using-cp4a). 
 
-- For the sake of this code pattern, we have a readily available [Codewind project](https://github.com/IBM/build-deploy-manage-cloud-native-application-on-openshift). 
+Steps to import project to Codewind:
 
 - Open terminal application. Change to a directory where you want to clone the existing project. Run the below command to clone the project.
 
   ```
-  $ git clone git@github.com:IBM/build-deploy-manage-cloud-native-application-on-openshift.git
+  $ git clone https://github.com/IBM/build-deploy-cloud-native-application-using-cp4a.git
   ```
 
 - In eclipse Codewind Explorer view, right click on `Local` connection. Click on `Add Existing Project...`
@@ -119,7 +133,9 @@ You can create a project in codewind either by pointing to an existing Codewind 
 
   <img src="./images/image-20200728132038806.png" alt="image-20200728132038806" width="50%" />
 
-- Click `Finish`. A new Codewind project is created from the cloned repository. The application will be built and deployed on local docker container to run. The status will change to `Running` after a while.
+- Once imported, the next screen shows that it is a project of Type `appsodyExtension` and is a Java project.
+
+- Click `Finish`. A new Codewind project is created from the cloned repository. The application will be built and deployed on local docker container to run. The status should change to `Running` after a while.
 
 #### 3.2 Create a new Project
 
@@ -127,7 +143,7 @@ You can create a project in codewind either by pointing to an existing Codewind 
 
   <img src="./images/image-20200728152937914.png" alt="image-20200728152937914" width="50%" />
 
-- In `New Codewind Project` popup window enter `Project name` and select a Kabanero stack template. Click `Finsih`.
+- In `New Codewind Project` popup window enter `Project name` and select a Kabanero stack template. Click `Finish`.
 
   <img src="./images/image-20200728153542187.png" alt="image-20200728153542187" width="50%" />
 
@@ -150,12 +166,14 @@ Since the application we are using accesses weather information from [Open Weath
 
   ![image-20200730151715892](./images/image-20200730151715892.png)
 
-- Copy the api key generated. This key needs to be added in code.
+- Copy the API key generated. This key needs to be added in code.
 
 - Go to eclipse IDE and navigate to `WeatherResources.java` file. Double click on the file to open it.
 <img src="./images/image-20200730152140899.png" alt="image-20200730152140899" width="50%" />
 
-- Around line no. 35, paste the API key that you copied within the double quotes for the variable `apikey`. Save the file. The changes get deployed.
+- Around line no. 35, paste the API key that you copied within the double quotes for the constant String `API_KEY`. Save the file. The changes get deployed.
+
+  ![image-20200807122747864](./images/image-20200807122747864.png)
 
 ### 5. Run the application locally
 
@@ -189,7 +207,7 @@ The deployment manifest for your project is created when you run `appsody build`
   ```
   $ appsody build
   ```
-- When the command runs successfully, it will generate `app-deploy.yaml` files in the project parent folder.
+- This command will take a few minutes. When the command runs successfully, it will generate `app-deploy.yaml` files in the project parent folder.
 - Open `app-delpoy.yaml` file and add a namespace section as shown below. Here the namespace name will be the name where you want to deploy your application. In this code pattern, the app will be deployed in `weather-app` namespace which was created using `oc new-project` in the OpenShift cluster. You can use `kabanero` namespace as well.
   > Note: It is recommended that you use separate namespaces either for individual applications/projects.
 
