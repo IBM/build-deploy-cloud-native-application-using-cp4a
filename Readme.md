@@ -1,4 +1,3 @@
-## Work-in-progress
 
 ## Build and Deploy Cloud-Native Java application using IBM Cloud Pak for Applications
 
