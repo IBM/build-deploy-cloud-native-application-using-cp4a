@@ -4,7 +4,7 @@ Build and Deploy Cloud-Native Java application using IBM Cloud Pak for Applicati
 
 # Long title
 
-Develop a Cloud-Native weather application in Java using Codewind and deploy, using CI/CD Tekton pipelines, to Openshift cluster of IBM Cloud Pak for Applications
+Develop a Cloud-Native weather application in Java using Codewind and deploy using CI/CD Tekton pipelines
 
 
 # Author
@@ -21,23 +21,18 @@ Develop a Cloud-Native weather application in Java using Codewind and deploy, us
 
 # Summary
 
-IBM Cloud Pak for Applications (CP4A) helps you modernize existing applications and develop new cloud-native applications that can quickly deliver value and can be tailored to your specific needs. This can help you to respond to customer needs faster.
-
-In this code pattern, you will use the Accelerators for Teams feature of CP4A to demonstrate how to develop a cloud-native application and deploy it on OpenShift using CI/CD features.
+IBM Cloud Pak for Applications (CP4A) helps you modernize existing applications and develop new cloud-native applications that can quickly deliver value and can be tailored to your specific needs. This can help you to respond to customer needs faster. This code pattern demonstrates the Accelerators for Teams feature of CP4A by developing a cloud-native application and deploying it on OpenShift using CI/CD features.
 
 # Technologies
 
 * [Java](https://developer.ibm.com/technologies/java/): The Java programming language is a high-level, object-oriented language. It is rapidly evolving across several fronts to simplify and accelerate development of modern applications.
 * [Continuous Integration](https://developer.ibm.com/technologies/continuous-integration/): Continuous integration (CI) is a software development and DevOps practice of integrating code regularly into one shared repository. Quickly and easily detect errors within your code to keep your team agile and efficient.
 * [Continuous Delivery](https://developer.ibm.com/technologies/continuous-delivery/): Automate your software release process with continuous delivery (CD), a practice that allows teams to build, test, and deploy code changes quickly, ensuring your software is always ready for deployment.
+* [Kabanero](https://developer.ibm.com/open/projects/kabanero/)
+* [Tekton](https://developer.ibm.com/articles/introduction-to-tekton-architecture-and-design/)
+
 
 # Description
-
-IBM Cloud Pak for Applications (CP4A) helps you modernize existing applications and develop new cloud-native applications that can quickly deliver value and can be tailored to your specific needs. This can help you to respond to customer needs faster.
-
-In this code pattern, you will use the Accelerators for Teams feature of CP4A to demonstrate how to develop a cloud-native application and deploy it on OpenShift using CI/CD features. 
-
-**Accelerator for Teams of CP4A - overview**
 
 Accelerator for Teams is the enterprise-ready and fully supported implementation of the Kabanero open source community project. The product enables Continuous Integration / Continuous Deployment (CI/CD) workflows across the end to end development lifecycle using Appsody, Codewind and Tekton (DevOps toolchain). Kabanero integrates application stack hubs which enable developers to use runtimes and frameworks in pre-built container images.
 
@@ -45,7 +40,7 @@ Kabanero's developer experience for IDEs is provided by Codewind, which is used 
 
 You will develop a simple Java weather application using Codewind and Tekton pipeline for Continous delivery in this code pattern. 
 
-Accelerators deliver innovative technology to speed up the design process. As well as embedding Reference Blueprints that are based on Reference Architectures in the  [Cloud Architecture Center](https://www.ibm.com/cloud/architecture/architectures), they also provide the framework for designing your application from scratch.
+Accelerators for teams not only deliver innovative technology to speed up the design process, it provides Reference Blueprints that are based on Reference Architectures in the  [Cloud Architecture Center](https://www.ibm.com/cloud/architecture/architectures).
 
 When you have completed this code pattern, you will understand how to:
 
@@ -75,10 +70,11 @@ At the end, you will run the application with a simple interface which accepts n
 3. Create a project in Codewind
 4. Get API Key from Open Weather
 5. Run the application locally
-6. Push application code to GitHub repository
-7. Create token for your Github
-8. Configure and Execute Tekton Pipeline
-9. Access the deployed Application
+6. Prepare application to be deployed to CP4A
+7. Push application code to GitHub repository
+8. Create token for your Github
+9. Configure and Execute Tekton Pipeline
+10. Access the deployed Application
 
 
 # Components and services
