@@ -54,10 +54,11 @@ At the end, you will run the application with a simple interface which accepts n
 3. [Create a project in Codewind](#3-create-a-project-in-codewind)
 4. [Get API Key from Open Weather](#4-get-api-key-from-open-weather)
 5. [Run the application locally](#5-run-the-application-locally)
-6. [Push application code to GitHub repository](#6-push-application-code-to-github-repository)
-7. [Create token for your Github](#7-create-token-for-your-github)
-8. [Configure and Execute Tekton Pipeline](#8-configure-and-execute-tekton-pipeline)
-9. [Access the deployed Application](#9-access-the-deployed-application)
+6. [Prepare application to be deployed to CP4A](#6-prepare-application-to-be-deployed-to-cp4a)
+7. [Push application code to GitHub repository](#7-push-application-code-to-github-repository)
+8. [Create token for your Github](#8-create-token-for-your-github)
+9. [Configure and Execute Tekton Pipeline](#9-configure-and-execute-tekton-pipeline)
+10. [Access the deployed Application](#10-access-the-deployed-application)
 
 ### 1. Install Codewind and Appsody
 
@@ -133,7 +134,7 @@ Steps to import project to Codewind:
 
 - Click `Finish`. A new Codewind project is created from the cloned repository. The application will be built and deployed on local docker container to run. The status should change to `Running` after a while.
 
-> If you wish to create a new project, you can do it. Ensure you select a project template from Kabanero Stack that were referenced in Codewind as explained in step 2 above. 
+> If you wish to create a new project, `Create New Project` using Codewind Explorer and select a project template as `Kabanero Open Liberty template` from Kabanero Stack that were referenced in step 2 above. 
 
 
 <!--#### 3.2 Create a new Project
@@ -229,15 +230,12 @@ Once you have added your code into the application and have tested the same, now
 
 - Create a new repository in [GitHub](https://github.com). 
 
-- ***If you have cloned this repository***
+- Delete `.git` directory inside the cloned repository parent folder before pushing it to your GitHub. 
 
-  If you have already cloned the repo and using it for this code pattern, then you need to delete `.git` directory before pushing it to your GitHub. Then follow the steps given next.
-  
-  ***If you have created a new project***
-  
-  In case you have created a new project in Codewind, then use the below commands to push the code to GitHub repository.
-
-- Navigate to parent folder of the project on your local machine.
+  ```
+    cd build-deploy-cloud-native-application-using-cp4a
+    rm -rf .git
+  ```
 
 - Run below commands
 
@@ -245,14 +243,13 @@ Once you have added your code into the application and have tested the same, now
   $ git init
   $ git add -A
   $ git commit -m "<your comments>"
-  $ git remote add origin <git url>
+  $ git remote add origin <newly-created-git-repo-url-in-your-account>
   $ git push -u origin master
   ```
-  
 
-Application code is now pushed to GitHub repository.
+Application code is now pushed to your GitHub repository.
 
-### 7. Create token for your Github
+### 8. Create token for your Github
 
 Before configuring the Tekton Pipeline, you need to create GitHub token so that the pipeline could access your application code. Follow the below steps to create the Github token.
 
@@ -268,7 +265,7 @@ Before configuring the Tekton Pipeline, you need to create GitHub token so that 
 * Select the scopes, or permissions, you’d like to grant this token. To use your token to access repositories from the tekton pipeline, select the `repo` checkbox. Click the `Generate token` button.
 * Copy the token to your clipboard and make a note of this token safely. For security reasons, after you navigate off the page, you will not be able to see the token again.
 
-### 8. Configure and Execute Tekton Pipeline
+### 9. Configure and Execute Tekton Pipeline
 
 Launch your `Openshift cluster Console` and then click on `Cloud Pak Console`.
 
@@ -333,7 +330,7 @@ When the pipeline run completes, verify that the application is running using th
 
 It should show the pod and service corresponding to the application.
 
-### 9. Access the deployed Application
+### 10. Access the deployed Application
 
 To access the deployed application, get the URL of the application using following command:
 
