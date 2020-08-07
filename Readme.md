@@ -111,11 +111,7 @@ The Codewind project templates needs to be added to Codewind in Eclipse IDE.
 
 ### 3. Create a project in Codewind
 
-You can create a project in Codewind either by pointing to an existing Codewind project or by creating a new project from scratch. In this demonstration we will use an existing application. 
-
-> If you wish to create a new project, you can do it. Ensure you select a project template from Kabanero Stack that were referenced in Codewind as explained in step 2 above.
-
-For the sake of this code pattern, we have a readily available [Codewind project](https://github.com/IBM/build-deploy-cloud-native-application-using-cp4a). 
+You can create a project in Codewind either by pointing to an existing Codewind project provided in this repository or by creating a new project from scratch. In this demonstration we will use an existing Codewind project. 
 
 Steps to import project to Codewind:
 
@@ -137,7 +133,9 @@ Steps to import project to Codewind:
 
 - Click `Finish`. A new Codewind project is created from the cloned repository. The application will be built and deployed on local docker container to run. The status should change to `Running` after a while.
 
-#### 3.2 Create a new Project
+> If you wish to create a new project, you can do it. Ensure you select a project template from Kabanero Stack that were referenced in Codewind as explained in step 2 above. 
+
+<#### 3.2 Create a new Project
 
 - Right click on `Local` connection in Codewind explorer view. And click `Create New Project...`.
 
@@ -150,7 +148,7 @@ Steps to import project to Codewind:
 - The project gets created in eclipse workspace. Additionally, the application is built and deployed to local docker container. The status of the application will change to `Running` after a while.
 <img src="./images/image-20200728154552408.png" alt="image-20200728154552408" width="50%" />
 
-- Once the template is initialized successfully, you can edit the project code to include your custom code. The changes are immediately built and deployed.
+- Once the template is initialized successfully, you can edit the project code to include your custom code. The changes are immediately built and deployed.>
 
 ### 4. Get API Key from Open Weather
 
@@ -208,7 +206,7 @@ The deployment manifest for your project is created when you run `appsody build`
   $ appsody build
   ```
 - This command will take a few minutes. When the command runs successfully, it will generate `app-deploy.yaml` files in the project parent folder.
-- Open `app-delpoy.yaml` file and add a namespace section as shown below. Here the namespace name will be the name where you want to deploy your application. In this code pattern, the app will be deployed in `weather-app` namespace which was created using `oc new-project` in the OpenShift cluster. You can use `kabanero` namespace as well.
+- Open `app-deploy.yaml` file and add a namespace section as shown below. Here the namespace name will be the name where you want to deploy your application. In this code pattern, the app will be deployed in `weather-app` namespace which was created using `oc new-project` in the OpenShift cluster. You can use `kabanero` namespace as well.
   > Note: It is recommended that you use separate namespaces either for individual applications/projects.
 
   ```
