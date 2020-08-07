@@ -27,21 +27,23 @@ public class WeatherResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response weather(@QueryParam("getCity") String city, @QueryParam("lat") double lat, @QueryParam("lon") double lon) {
     	
+    	final String API_KEY = "2276454694917418ea5bacdffa49e101";
+
     	JSONParser parse = new JSONParser();
     	JSONObject jobj;
     	
+    	
     	System.out.println("Lat = " + lat +  " Lon = " + lon);
         
-    	String apikey = "";
 		String inline = "";
 		
 		try {
 			URL url = null;
 			if( city != null ) {
-				url = new URL("http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+apikey);
+				url = new URL("http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+API_KEY);
 			}
 			else {
-				url = new URL("http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&appid="+apikey);
+				url = new URL("http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&appid="+API_KEY);
 			}
 					
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
