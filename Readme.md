@@ -135,11 +135,12 @@ Steps to import project to Codewind:
 
 > If you wish to create a new project, you can do it. Ensure you select a project template from Kabanero Stack that were referenced in Codewind as explained in step 2 above. 
 
-<#### 3.2 Create a new Project>
+<!--
+#### 3.2 Create a new Project
 
 - Right click on `Local` connection in Codewind explorer view. And click `Create New Project...`.
 
-  <img src="./images/image-20200728152937914.png" alt="image-20200728152937914" width="50%" />
+  <!--<img src="./images/image-20200728152937914.png" alt="image-20200728152937914" width="50%" />-->
 
 - In `New Codewind Project` popup window enter `Project name` and select a Kabanero stack template. Click `Finish`.
 
@@ -149,6 +150,7 @@ Steps to import project to Codewind:
 <img src="./images/image-20200728154552408.png" alt="image-20200728154552408" width="50%" />
 
 - Once the template is initialized successfully, you can edit the project code to include your custom code. The changes are immediately built and deployed.
+-->
 
 ### 4. Get API Key from Open Weather
 
