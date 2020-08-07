@@ -114,8 +114,6 @@ The Codewind project templates needs to be added to Codewind in Eclipse IDE.
 
 You can create a project in Codewind either by pointing to an existing Codewind project provided in this repository or by creating a new project from scratch. In this demonstration we will use an existing Codewind project. 
 
-Steps to import project to Codewind:
-
 - Open terminal application. Change to a directory where you want to clone the existing project. Run the below command to clone the project.
 
   ```
@@ -155,7 +153,7 @@ Steps to import project to Codewind:
 
 ### 4. Get API Key from Open Weather
 
-Since the application we are using accesses weather information from [Open Weather](https://home.openweathermap.org), we will have to get API Key from Open Weather.
+Since the application provided in this repository accesses weather information from [Open Weather](https://home.openweathermap.org), we will have to get API Key from Open Weather.
 
 - Register at [Open Weather](https://home.openweathermap.org/users/sign_up), if not already registered.
 
@@ -170,7 +168,7 @@ Since the application we are using accesses weather information from [Open Weath
 - Copy the API key generated. This key needs to be added in code.
 
 - Go to eclipse IDE and navigate to `WeatherResources.java` file. Double click on the file to open it.
-<img src="./images/image-20200730152140899.png" alt="image-20200730152140899" width="50%" />
+  <img src="./images/image-20200730152140899.png" alt="image-20200730152140899" width="50%" />
 
 - Around line no. 35, paste the API key that you copied within the double quotes for the constant String `API_KEY`. Save the file. The changes get deployed.
 
@@ -179,7 +177,7 @@ Since the application we are using accesses weather information from [Open Weath
 ### 5. Run the application locally
 
 - Now the project is deployed and running on local docker container. To access the application, right-click on the application entry in Codewind Explorer view, and click on `Open Application`. 
-<img src="./images/image-20200728171832454.png" alt="image-20200728171832454" width="50%" />
+  <img src="./images/image-20200728171832454.png" alt="image-20200728171832454" width="50%" />
 
 - The application home page is launched in a browser.
 
@@ -189,15 +187,11 @@ Since the application we are using accesses weather information from [Open Weath
 
   <img src="./images/image-20200728172947891.png" alt="image-20200728172947891" width="50%" />
 
-
-
 - You can perform various operations on the application, including checking log files, debugging, monitor performance. 
 
   <img src="./images/image-20200728173335118.png" alt="image-20200728173335118" width="50%" />
 
 - You can get more details about these project actions [here](https://www.eclipse.org/codewind/project-actions.html).
-
-  
 
 ### 6. Prepare application to be deployed to CP4A
 
@@ -209,8 +203,16 @@ The deployment manifest for your project is created when you run `appsody build`
   $ appsody build
   ```
 - This command will take a few minutes. When the command runs successfully, it will generate `app-deploy.yaml` files in the project parent folder.
-- Open `app-deploy.yaml` file and add a namespace section as shown below. Here the namespace name will be the name where you want to deploy your application. In this code pattern, the app will be deployed in `weather-app` namespace which was created using `oc new-project` in the OpenShift cluster. You can use `kabanero` namespace as well.
-  > Note: It is recommended that you use separate namespaces either for individual applications/projects.
+- Decide the namespace where you want to deploy the application. You can use any of the existing namespaces or create new. It is recommended that you use separate namespaces for individual applications/projects. Here, we create a new namespace in OpenShift Cluster using the below commands.
+    - Login to OpenShift Cluster. Navigate to `IBM Cloud Dashboard > Clusters > Your OpenShift Cluster > OpenShift web console`. On web console, click the menu in the upper right corner (the label contains your email address), and select Copy Login Command. Click on `Display token`, copy the login command and paste the command into your local console window.
+      ```
+      oc login --token=xxxx --server=https://xxxx.containers.cloud.ibm.com:xxx
+      ```
+    - Create new project.
+      ```
+      oc new-project weather-app  ## where weather-app is the namespace name which can be any name
+      ```
+- Open `app-deploy.yaml` file and add a namespace section as shown below. Here the namespace name will be the name where you want to deploy your application.
 
   ```
   apiVersion: appsody.dev/v1beta1
@@ -321,7 +323,7 @@ In the newly opened tab, click on `Log-in with OpenShift` then it will launch a 
   
   You can also check the status of pipelinerun using `oc describe pipelinerun <pipelinerun-name>` commands. If pipelinerun fails because of any issue then better to check pods and a specific container logs for more details. You can also use Tekton CLI `tkn` for the same purpose.
 
-When the pipeline run completes, verify that the application is running using the following commands.
+When the pipeline run completes, verify that the application is running using the following commands. Here `namespace-name` is the one which you have used in step 6 and step 9 above.
 
 ```
   $ oc get pods -n <namespace-name>
