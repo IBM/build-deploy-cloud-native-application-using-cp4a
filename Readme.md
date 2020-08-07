@@ -26,7 +26,7 @@ At the end, you will run the application with a simple interface which accepts n
 
 ## Flow
 
-<img src="./images/image-20200805163350746.png" alt="image-20200805163350746" width="50%;" />
+<img src="./images/image-20200805163350746.png" alt="image-20200805163350746" width="70%;" />
 
 
 
@@ -87,7 +87,7 @@ IBM Cloud Pak for Applications provide a set of project templates. We will confi
 
 The Codewind project templates needs to be added to Codewind in Eclipse IDE. 
 
-- Go to Eclipse IDE > Codewind explorer view (Menu > Window > Show View > Other.. and search for Codewind )
+- Go to Eclipse IDE > Codewind explorer view `(Menu > Window > Show View > Other.. and search for Codewind)`
 
 - In Codewind Explorer view, ensure that the `Local` connection in Codewind view is in running status. 
 
@@ -298,7 +298,7 @@ In the newly opened tab, click on `Log-in with OpenShift` then it will launch a 
     * **Docker Registry** is the url where the container image will be pushed. You can add your own Docker Hub registry, IBM Container Registry or integrated OpenShift Container Platform Registry. For OpenShift cluster 4.x, integrated OpenShift container registry URL is `image-registry.openshift-image-registry.svc:5000/<namespace-name>`, where namespace name is the project name where you want to deploy your application. It should be the same namespace which you have added in `app-deploy.yaml` in step 6 above.
     
 
-![webhook-settings](./images/webhook-settings.png)
+    ![webhook-settings](./images/webhook-settings.png)
 
 * Click `Create`.
 
@@ -306,7 +306,7 @@ In the newly opened tab, click on `Log-in with OpenShift` then it will launch a 
 
 * Validate that Tekton and GitHub are successfully connected by opening your Github repository. Go to `Your Github repository > Settings -> Webhooks`. It should show a link as shown.
 
-![webhook-repo-settings](./images/webhook-repo-settings.png)
+  ![webhook-repo-settings](./images/webhook-repo-settings.png)
 
 **Trigger Tekton Pipeline**
 
