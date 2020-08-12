@@ -28,15 +28,16 @@ IBM Cloud Pak for Applications (CP4A) helps you modernize existing applications 
 * [Java](https://developer.ibm.com/technologies/java/): The Java programming language is a high-level, object-oriented language. It is rapidly evolving across several fronts to simplify and accelerate development of modern applications.
 * [Continuous Integration](https://developer.ibm.com/technologies/continuous-integration/): Continuous integration (CI) is a software development and DevOps practice of integrating code regularly into one shared repository. Quickly and easily detect errors within your code to keep your team agile and efficient.
 * [Continuous Delivery](https://developer.ibm.com/technologies/continuous-delivery/): Automate your software release process with continuous delivery (CD), a practice that allows teams to build, test, and deploy code changes quickly, ensuring your software is always ready for deployment.
-* [Kabanero](https://developer.ibm.com/open/projects/kabanero/)
 * [Tekton](https://developer.ibm.com/articles/introduction-to-tekton-architecture-and-design/)
 
 
 # Description
 
-Accelerator for Teams is the enterprise-ready and fully supported implementation of the Kabanero open source community project. The product enables Continuous Integration / Continuous Deployment (CI/CD) workflows across the end to end development lifecycle using Appsody, Codewind and Tekton (DevOps toolchain). Kabanero integrates application stack hubs which enable developers to use runtimes and frameworks in pre-built container images.
+Enterprises are moving towards cloud-native development for a host of benefits. However, to realize the benefits of cloud-native development and to deliver faster, enterprises must overcome the challenges of retaining enterprise governance, and the cost of building new skills and transforming end-to-end development practices.
 
-Kabanero's developer experience for IDEs is provided by Codewind, which is used for creating, building, running, and profiling applications. Appsody can be used for deployment, in addition to creating, building, running applications. Tekton pipelines provide consistent, managed, and governed CI/CD processes that react to repository events that occur during code development. For more information on how Kabanero and its components work, refer this [link](https://kabanero.io/docs/ref/general/overview/architecture-overview.html).
+The Accelerator for Teams for cloud-native solutions are designed to speed up the development of cloud-native applications by providing an end-to-end journey from a business problem to a production application. It provides enterprise governance by bringing together Application Stacks, integrated DevOps and a choice of developer tools. Cloud native services is even faster because the Accelerators for Teams automatically generates the development projects, services, and configuration settings that can deploy your application to an OpenShift cluster. All your development teams need to do is code your business logic.
+
+Developer experience for IDEs is provided by Codewind, which is used for creating, building, running, and profiling applications. Tekton pipelines provide consistent, managed, and governed CI/CD processes that react to repository events that occur during code development.
 
 You will develop a simple Java weather application using Codewind and Tekton pipeline for Continous delivery in this code pattern. 
 
@@ -80,8 +81,6 @@ At the end, you will run the application with a simple interface which accepts n
 # Components and services
 
 [IBM Cloud Pak for Application](https://developer.ibm.com/series/introduction-ibm-cloud-paks-for-applications/)
-
-[Kabanero](https://developer.ibm.com/open/projects/kabanero/)
 
 [Java](https://developer.ibm.com/technologies/java/)
 
