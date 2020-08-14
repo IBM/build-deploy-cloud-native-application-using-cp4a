@@ -28,15 +28,14 @@ At the end, you will run the application with a simple interface which accepts n
 
 ## Flow
 
-<img src="./images/image-20200805163350746.png" alt="image-20200805163350746" width="70%;" />
+![image-20200814125912726](./images/image-20200814125912726.png)
 
-
-
-1. User develops/updates an application using Codewind in Eclipse.
-2. User pushes the code to the GitHub repository.
-3. User configures Tekton Pipeline and defines GitHub Webhook to get events for code change.
-4. Tekton pipeline builds and deploys the application whenever there is a change in the GitHub repository.
-5. User accesses the application on the Cloud.
+1. User installs Codewind and add stack hub provided by IBM Cloud Pak for Applications on IBM Managed OpenShift cluster.
+2. User develops an application using a project template available in the added stack hub.
+3. User pushes the developed application code to the GitHub repository.
+4. User configures Tekton Pipeline and defines GitHub Webhook on IBM Cloud Pak for Applications.
+5. Tekton pipeline builds and deploys the application to OpenShift cluster whenever there is code change event in GitHub repository.
+6. User accesses the deployed application.
 
 
 
