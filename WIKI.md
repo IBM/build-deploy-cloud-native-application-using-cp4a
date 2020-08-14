@@ -56,7 +56,7 @@ At the end, you will run the application with a simple interface which accepts n
 <img src="./images/image-20200814130937661.png" alt="image-20200805163350746" />
 
 
-1. User installs Codewind and add stack hub provided by IBM Cloud Pak for Applications on IBM Managed OpenShift cluster.
+1. User installs Codewind and adds stack hub provided by IBM Cloud Pak for Applications on IBM Managed OpenShift cluster.
 2. User develops an application using a project template available in the added stack hub.
 3. User pushes the developed application code to the GitHub repository.
 4. User configures Tekton Pipeline and defines GitHub Webhook on IBM Cloud Pak for Applications.
