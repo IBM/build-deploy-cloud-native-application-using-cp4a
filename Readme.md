@@ -28,7 +28,7 @@ At the end, you will run the application with a simple interface which accepts n
 
 ## Flow
 
-![image-20200814130207779](./images/image-20200814130207779.png)
+![image-20200814130937661](./images/image-20200814130937661.png)
 
 1. User installs Codewind and add stack hub provided by IBM Cloud Pak for Applications on IBM Managed OpenShift cluster.
 2. User develops an application using a project template available in the added stack hub.
