@@ -27,7 +27,7 @@ public class WeatherResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response weather(@QueryParam("getCity") String city, @QueryParam("lat") double lat, @QueryParam("lon") double lon) {
     	
-    	final String API_KEY = "2276454694917418ea5bacdffa49e101";
+    	final String API_KEY = "xxxx"; // update with your own API Key
 
     	JSONParser parse = new JSONParser();
     	JSONObject jobj;
