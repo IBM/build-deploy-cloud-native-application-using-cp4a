@@ -1,4 +1,4 @@
-# This content is no more supported as one or more of the underlying components are not supported
+> This content is no more supported as one or more of the underlying components are not supported
 
 ## Build and Deploy Cloud-Native Java application using IBM Cloud Pak for Applications
 
